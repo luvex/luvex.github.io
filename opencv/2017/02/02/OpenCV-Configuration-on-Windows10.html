@@ -197,7 +197,7 @@
   <li>the first configure will take some time, and it will give some errors, we need to click several options
     <ul>
       <li>BUILD_EXAMPLES: sample codes</li>
-      <li>OENCV_EXTRA_MODULES_PATH: put the path of <code>opencv\_contrib</code> source code here</li>
+      <li>OENCV_EXTRA_MODULES_PATH: put the path of <code>opencv_contrib</code> source code here</li>
       <li>WITH_CUDA</li>
       <li>WITH_TBB: after click this(cmake will report include dirs not found, we need to put the path of tbb there, the finall configuration should be like below)</li>
       <li>
@@ -251,11 +251,12 @@
   <li>So we’d better build the codes we want to use one by one, then we will not generate a lot of useless lib and escape from endless bugs</li>
 </ul>
 
-<p>hint:</p>
+<p>some hints:</p>
 
-<ul>
+<ol>
   <li>just remove the useless reference and lib if you can not fix it, because some libs are not finished, don’t waste time on it</li>
-</ul>
+  <li>since VS2015 does not support VLA(Variable Length Array) which is supported in g++, we can use <code>malloc()</code> and <code>free()</code> function to rewrite the codes.</li>
+</ol>
 
 <h3 id="procesure-3-test">Procesure 3 test</h3>
 
@@ -279,6 +280,7 @@
 
 <ul>
   <li><a href="http://www.cnblogs.com/asmer-stone/p/5530868.html">http://www.cnblogs.com/asmer-stone/p/5530868.html</a></li>
+  <li><a href="https://msdn.microsoft.com/en-us/library/zb1574zs.aspx">Visual studio VLA</a></li>
 </ul>
 
 				</span>

@@ -5,8 +5,8 @@
         <description>CoderX - luvex</description>
         <link>http://simpleyyt.github.io</link>
         <link>http://simpleyyt.github.io</link>
-        <lastBuildDate>2017-02-03T19:16:20+01:00</lastBuildDate>
-        <pubDate>2017-02-03T19:16:20+01:00</pubDate>
+        <lastBuildDate>2017-02-03T19:39:32+01:00</lastBuildDate>
+        <pubDate>2017-02-03T19:39:32+01:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -53,7 +53,7 @@
   &lt;li&gt;the first configure will take some time, and it will give some errors, we need to click several options
     &lt;ul&gt;
       &lt;li&gt;BUILD_EXAMPLES: sample codes&lt;/li&gt;
-      &lt;li&gt;OENCV_EXTRA_MODULES_PATH: put the path of &lt;code&gt;opencv\_contrib&lt;/code&gt; source code here&lt;/li&gt;
+      &lt;li&gt;OENCV_EXTRA_MODULES_PATH: put the path of &lt;code&gt;opencv_contrib&lt;/code&gt; source code here&lt;/li&gt;
       &lt;li&gt;WITH_CUDA&lt;/li&gt;
       &lt;li&gt;WITH_TBB: after click this(cmake will report include dirs not found, we need to put the path of tbb there, the finall configuration should be like below)&lt;/li&gt;
       &lt;li&gt;
@@ -107,11 +107,12 @@
   &lt;li&gt;So we’d better build the codes we want to use one by one, then we will not generate a lot of useless lib and escape from endless bugs&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;hint:&lt;/p&gt;
+&lt;p&gt;some hints:&lt;/p&gt;
 
-&lt;ul&gt;
+&lt;ol&gt;
   &lt;li&gt;just remove the useless reference and lib if you can not fix it, because some libs are not finished, don’t waste time on it&lt;/li&gt;
-&lt;/ul&gt;
+  &lt;li&gt;since VS2015 does not support VLA(Variable Length Array) which is supported in g++, we can use &lt;code&gt;malloc()&lt;/code&gt; and &lt;code&gt;free()&lt;/code&gt; function to rewrite the codes.&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h3 id=&quot;procesure-3-test&quot;&gt;Procesure 3 test&lt;/h3&gt;
 
@@ -135,6 +136,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/asmer-stone/p/5530868.html&quot;&gt;http://www.cnblogs.com/asmer-stone/p/5530868.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://msdn.microsoft.com/en-us/library/zb1574zs.aspx&quot;&gt;Visual studio VLA&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
                 <link>http://simpleyyt.github.io/opencv/2017/02/02/OpenCV-Configuration-on-Windows10</link>

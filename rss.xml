@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+        <title>CoderX</title>
+        <description>CoderX - luvex</description>
+        <link>http://simpleyyt.github.io</link>
+        <link>http://simpleyyt.github.io</link>
+        <lastBuildDate>2017-02-03T15:41:01+01:00</lastBuildDate>
+        <pubDate>2017-02-03T15:41:01+01:00</pubDate>
+        <ttl>1800</ttl>
+
+
+        <item>
+                <title>OpenCV Configuration on Windows10</title>
+                <description>&lt;p&gt;The configuration is based on Win10(64 bit), CUDA8.0, CMake 64bit(3.6.3), TBB, OpenCV 3.1 source code, Visual Studio 2015.
+(Laptop SurfaceBook, 16GB RAM, 500G SSD, i7-6600U, Nvidia GPU(1GB RAM))&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;I learned OpenCV under the guidance of professor &lt;a href=&quot;http://www.i3s.unice.fr/~precioso/&quot;&gt;Frédéric Precioso&lt;/a&gt; in &lt;a href=&quot;http://www.polytechnice.fr/&quot;&gt;Polytech Nice-Sophia&lt;/a&gt;, Nice, France.&lt;/p&gt;
+
+&lt;p&gt;Normally, it is a better chocie to play with OpenCV on some development kit like &lt;a href=&quot;http://www.nvidia.com/object/jetson-tk1-embedded-dev-kit.html&quot;&gt;NVIDIA Jetson TK1&lt;/a&gt;. But we can also try it with our pour hardware for fun^-^&lt;/p&gt;
+
+&lt;h3 id=&quot;procedure-0-prepare-the-tools&quot;&gt;Procedure 0 prepare the tools&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;OpenCV source code including &lt;a href=&quot;https://github.com/opencv/opencv/releases&quot;&gt;OpenCV&lt;/a&gt; and &lt;a href=&quot;https://github.com/opencv/opencv_contrib/releases&quot;&gt;Opencv_contrib&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.nvidia.com/cuda-downloads&quot;&gt;Nvidia CUDA 8.0&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cmake.org/download/&quot;&gt;CMake 3.6.3 64bit&lt;/a&gt; other version may cause errors&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.threadingbuildingblocks.org/download&quot;&gt;TBB&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.visualstudio.com/downloads/&quot;&gt;Visual Studio 2015 community&lt;/a&gt;, install the C++ module to get the cl.exe compiler(you can create a C++ project to verify it is installed). I am using 64bit version, 32bit version should work as well.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After downloading and installing these tools and source codes, we can go to next procedure.&lt;/p&gt;
+
+&lt;h3 id=&quot;procedure-1&quot;&gt;Procedure 1&lt;/h3&gt;
+
+&lt;picture&gt;
+    &lt;source srcset=&quot;/generated/1-1050by918-520617.png&quot; media=&quot;(min-width: 40em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 40em) and (min-resolution: 144dpi)&quot; /&gt;
+    &lt;source srcset=&quot;/generated/1-700by612-520617.png&quot; media=&quot;(min-width: 40em)&quot; /&gt;
+    &lt;source srcset=&quot;/generated/1-675by590-520617.png&quot; media=&quot;(min-width: 30em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 30em) and (min-resolution: 144dpi)&quot; /&gt;
+    &lt;source srcset=&quot;/generated/1-450by393-520617.png&quot; media=&quot;(min-width: 30em)&quot; /&gt;
+    &lt;source srcset=&quot;/generated/1-525by300-520617.png&quot; media=&quot;(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)&quot; /&gt;
+    &lt;source srcset=&quot;/generated/1-350by200-520617.png&quot; /&gt;
+    &lt;img src=&quot;/generated/1-350by200-520617.png&quot; class=&quot;blog-full&quot; itemprop=&quot;image&quot; alt=&quot;cmake.png&quot; /&gt;
+  &lt;/picture&gt;
+
+&lt;p&gt;In this part, we need to configure and generate the VS solution.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;open CMake, and choose the source directory(OpenCV code) and destination directory(can be any path).&lt;/li&gt;
+  &lt;li&gt;click configure, a dialog will pop up for choosing the compiler(vs 2015 64bit for me)&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;some-useful-resources&quot;&gt;Some useful resources&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://leetcode.com/&quot;&gt;LeetCode OJ&lt;/a&gt; : a platform for preparing technical coding interviews&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.topcoder.com/&quot;&gt;Topcoder&lt;/a&gt; : a website holding competitions periodically&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://weibo.com/nowcoder?from=feed&amp;amp;loc=nickname&quot;&gt;牛客网&lt;/a&gt; : a collection of interview questions including many famous companies&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://cv.qiaobutang.com/&quot;&gt;乔布简历&lt;/a&gt; : a website offering many CV templates&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://simpleyyt.github.io/opencv/2017/02/02/OpenCV-Configuration-on-Windows10</link>
+                <guid>http://simpleyyt.github.io/opencv/2017/02/02/OpenCV Configuration on Windows10</guid>
+                <pubDate>2017-02-02T16:03:30+01:00</pubDate>
+        </item>
+
+        <item>
+                <title>Reread Computer System a programmer's perspective Chapter_2</title>
+                <description>&lt;p&gt;A review of rereading chapter 2–Representing and Manipulating Information.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Contents of Chapter 1:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Information Storage&lt;/li&gt;
+  &lt;li&gt;Integer Representations&lt;/li&gt;
+  &lt;li&gt;Integer Arithmetic&lt;/li&gt;
+  &lt;li&gt;Floating Point&lt;/li&gt;
+  &lt;li&gt;Summary&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;information-storage&quot;&gt;Information Storage&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;transfer among Binary, Decimal&amp;amp;Hexadecimal&lt;/li&gt;
+  &lt;li&gt;Every computer has a &lt;strong&gt;word size&lt;/strong&gt;(representing virtual address 32bit/64bit)&lt;/li&gt;
+  &lt;li&gt;Big endian or Little endian (should be noticed when data are communicated over a newwork)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;swapping value
+&amp;gt; 
+  void inplace_swap(int *x, int *y)	
+  {	
+    *y = *x ^ *y;	
+    *x = *x ^ *y;	
+    *y = *x ^ *y;
+  }	
+  //For an array with odd length, we must be careful with the middle element which could be set to 0 under such swapping&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Boolean Algebra : &amp;amp;&lt;/td&gt;
+          &lt;td&gt;~ ^&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Other Operations:
+    &lt;ul&gt;
+      &lt;li&gt;Mask Operation&lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Logical Operation : ! &amp;amp;&amp;amp;&lt;/td&gt;
+              &lt;td&gt; &lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Shift Operations : « » (&lt;a href=&quot;http://blog.sina.com.cn/s/blog_944790400101bsi8.html&quot;&gt;The difference between logical&amp;amp;arithmetic operations&lt;/a&gt;)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;In this part, it mainly talks about bit-level calculation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;integer-representations&quot;&gt;Integer Representations&lt;/h2&gt;
+
+&lt;h2 id=&quot;integer-arithmetic&quot;&gt;Integer Arithmetic&lt;/h2&gt;
+
+&lt;h2 id=&quot;floating-point&quot;&gt;Floating Point&lt;/h2&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+</description>
+                <link>http://simpleyyt.github.io/reading/2015/08/05/Reread-Computer-Systems_2</link>
+                <guid>http://simpleyyt.github.io/reading/2015/08/05/Reread Computer Systems_2</guid>
+                <pubDate>2015-08-05T20:36:44+02:00</pubDate>
+        </item>
+
+        <item>
+                <title>Reread Computer System a programmer's perspective Chapter_1</title>
+                <description>&lt;p&gt;A review of rereading chapter 1.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Contents of Chapter 1:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Information Is Bits + Context&lt;/li&gt;
+  &lt;li&gt;Programs Are Translated by Other Programs into Different Forms&lt;/li&gt;
+  &lt;li&gt;It Pays to Understand How Compilation System Work&lt;/li&gt;
+  &lt;li&gt;Processors Read and Interpret Instructions Stored in Memory&lt;/li&gt;
+  &lt;li&gt;Caches Matter&lt;/li&gt;
+  &lt;li&gt;Storage Devices Form a Hierarchy&lt;/li&gt;
+  &lt;li&gt;The Operating System Manages the Hardware&lt;/li&gt;
+  &lt;li&gt;Systems Communicate with Other Systems Using Networks&lt;/li&gt;
+  &lt;li&gt;Important Themes&lt;/li&gt;
+  &lt;li&gt;Summary&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In Chapter 1, the author briefly introduces what will be involved in the whole book, and the core topic is &lt;strong&gt;abstraction&lt;/strong&gt; in my opinion.&lt;/p&gt;
+
+&lt;p&gt;And here are several points which I haven’t thought of before.&lt;/p&gt;
+
+&lt;p&gt;Firstly, what is information? The author tells us information is Bits+Context. Maybe this is even more important in age of big data. While programming, context must be considered carefully. It is a good way to produce codes with good performance.&lt;/p&gt;
+
+&lt;p&gt;Secondly, &lt;strong&gt;all I/O devices&lt;/strong&gt; are regarded as &lt;strong&gt;files&lt;/strong&gt; in modern operating systems. Obviously, it is a high abstraction and such ideas could be rather helpful for programmers.&lt;/p&gt;
+
+&lt;p&gt;Here are some knowledge points to review:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;There are two kinds of file text file(consist of ASCII characters) and binary file(All other files).&lt;/li&gt;
+  &lt;li&gt;The flow of compilation: (a C program example)
+    &lt;ul&gt;
+      &lt;li&gt;Preprocessing phase: generate another C program according directives(begin with #) with the .i suffix&lt;/li&gt;
+      &lt;li&gt;Compilation phase: translate the text file to another text file with the .s suffix which contains an &lt;strong&gt;assembly language program&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;Assembly phase: From assembly language To &lt;strong&gt;machine language&lt;/strong&gt;(binary file with .o suffix)&lt;/li&gt;
+      &lt;li&gt;Linking phase: generate executable object file linking some standard library.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Hardware Organization of a System:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;http://images.cnblogs.com/cnblogs_com/mydomain/201105/201105291545256647.png&quot; alt=&quot;Hardware organization of a typical system&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Multi-level cache. (Smaller-&amp;gt;faster)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;http://img.blog.csdn.net/20130711103254515?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQl9IX0w=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; alt=&quot;An example of a memory hierarchy&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Abstraction is provided by OS&lt;/li&gt;
+  &lt;li&gt;Virtual memory
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;http://img.blog.csdn.net/20130711100004453?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQl9IX0w=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; alt=&quot;Process virtual address space&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Concurrency and Parallelism
+    &lt;ul&gt;
+      &lt;li&gt;Thread-Level Concurrency&lt;/li&gt;
+      &lt;li&gt;Instruction-Level Concurrency&lt;/li&gt;
+      &lt;li&gt;Single-Instruction, Multiple-Data (SIMD) Parallelism&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Three fundamental abstractions:
+    &lt;ul&gt;
+      &lt;li&gt;Files –&amp;gt; I/O devices&lt;/li&gt;
+      &lt;li&gt;Virtual memory –&amp;gt; Both main memory and disks&lt;/li&gt;
+      &lt;li&gt;Processes –&amp;gt; the processor, main memory and I/O device&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Also the differences between concurrency and parallelism should be noticed:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Concurrency is a macroscopic concept which means several processes can run at the same time with one CPU, (share one CPU).&lt;/li&gt;
+  &lt;li&gt;Parallelism means several processes can run via several CPUs at the same time, (each owns one CPU).&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+                <link>http://simpleyyt.github.io/reading/2015/08/01/Reread-Computer-Systems_1</link>
+                <guid>http://simpleyyt.github.io/reading/2015/08/01/Reread Computer Systems_1</guid>
+                <pubDate>2015-08-01T01:36:44+02:00</pubDate>
+        </item>
+
+        <item>
+                <title>Booking Room On Airbnb</title>
+                <description>&lt;p&gt;An interesting experience of booking room on Airbnb&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;This summer, I found an internship in Beijing and then, I need to find a room to live in. One of my friends recommended me to use Airbnb, which is a website for people to rent out lodging.&lt;sup&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Airbnb&quot; title=&quot;Google&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;So I began to look through on Airbnb, however it is not very easy for me to find a proper room on it. In brief, distance and price can not make me satisfied at the same time. Hmm, but to tell the truth, most of the things are expensive in Beijing. At last, I choose a room near Wudaokou metro station which is ¥189/day. The host of the house is a Russian and I share the whole house with two roommates, one is an American and the other is a Chinese Canadian. They are all nice people and their Chinese are much better than my English:) It is quite free to talk with them.&lt;/p&gt;
+
+&lt;p&gt;As I need to find an independent space to prepare for my exam, I live in their room for about 10 days, it is quite an interesting experience to live with them.&lt;/p&gt;
+
+&lt;p&gt;This is the &lt;a href=&quot;https://zh.airbnb.com/rooms/6226315&quot;&gt;link&lt;/a&gt; of the room, strongly recommended:)&lt;/p&gt;
+
+&lt;p&gt;Reference:&lt;/p&gt;
+
+</description>
+                <link>http://simpleyyt.github.io/daily/2015/07/15/Booking-Room-On-Airbnb</link>
+                <guid>http://simpleyyt.github.io/daily/2015/07/15/Booking Room On Airbnb</guid>
+                <pubDate>2015-07-15T01:36:44+02:00</pubDate>
+        </item>
+
+        <item>
+                <title>Two knowledge points in CSharp</title>
+                <description>&lt;p&gt;Two grammer features:
+- const &amp;amp; readonly
+- ref &amp;amp; out&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;const &amp;amp; readonly&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;readonly 关键字与 const 关键字不同。 const 字段只能在该字段的声明中初始化。 readonly 字段可以在声明或构造函数中初始化。 因此，根据所使用的构造函数，readonly 字段可能具有不同的值。 另外，虽然 const 字段是编译时常量，但 readonly 字段可用于运行时常量，如此行所示：^[1]^&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;public static readonly uint l1 = (uint)DateTime.Now.Ticks;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In a word, &lt;strong&gt;const&lt;/strong&gt; can be seen as a &lt;em&gt;static constant&lt;/em&gt;, however, &lt;strong&gt;readonly&lt;/strong&gt; can be seen as a &lt;em&gt;dynamic constant&lt;/em&gt; which can be determined while the program is running.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ref &amp;amp; out&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ref 关键字通过引用（而非值）传递参数。 通过引用传递的效果是，对所调用方法中的参数进行的任何更改都反映在调用方法中。 例如，如果调用方传递本地变量表达式或数组元素访问表达式，所调用方法会将对象替换为 ref 参数引用的对象，然后调用方的本地变量或数组元素将开始引用新对象。^[2]^
+out 关键字通过引用传递参数。 这与 ref 关键字相似，只不过 ref 要求在传递之前初始化变量。 若要使用 out 参数，方法定义和调用方法均必须显式使用 out 关键字。^[3]^&lt;/p&gt;
+
+&lt;p&gt;```
+class OutExample
+{&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;static void Method(out int i)
+
+{
+
+    i = 44;
+
+}
+
+static void Main()
+
+{
+
+    int value;     
+
+    Method(out value); 
+
+    // value is now 44     
+
+} } ```
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;reference:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://msdn.microsoft.com/zh-cn/library/acdd6hb7.aspx&quot;&gt;msdn readonly&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://msdn.microsoft.com/zh-cn/library/14akc2c7.aspx&quot;&gt;msdn ref&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://msdn.microsoft.com/zh-cn/library/t3c3bfhx.aspx&quot;&gt;msdn out&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+                <link>http://simpleyyt.github.io/csharp/2015/05/22/Two-knowledge-points-in-CSharp</link>
+                <guid>http://simpleyyt.github.io/csharp/2015/05/22/Two knowledge points in CSharp</guid>
+                <pubDate>2015-05-22T18:21:14+02:00</pubDate>
+        </item>
+
+        <item>
+                <title>How to prepare for a interview</title>
+                <description>&lt;p&gt;Here are some of my interview experience.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Recently, I am looking for internship in many companies. I have applied to &lt;em&gt;BAT&lt;/em&gt;, &lt;em&gt;Thomason Reuters&lt;/em&gt;, &lt;em&gt;VMware&lt;/em&gt;, &lt;em&gt;Microsoft&lt;/em&gt; and &lt;em&gt;IBM&lt;/em&gt;. After experiencing a series of interviews, I think it is interesting to summarize the features of different companies. And there is a list below.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Company&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Position&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Features&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Baidu&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Data Mining Engineer&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Data Structure &amp;amp; Algorithms&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Alibaba&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Data Mining Engineer&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Math &amp;amp; Algorithms&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Tecent&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Backend Engineer&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;——&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Microsoft&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;C# Developer&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Coding &amp;amp; Algorithms&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Thomason Reuters&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;C# Developer&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Basics &amp;amp; Projects&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The internship I have applied to can be divided into two categories, one is about data mining which I am interested in but could be a little difficult for an undergraduate student. The other is about software development requiring to master a programming language, eg, C++, Java or C#.&lt;/p&gt;
+
+&lt;p&gt;Before participating an interview, you must prepare for it sufficiently. And there are some details we’d better pay attention to.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Talk clearly&lt;/li&gt;
+  &lt;li&gt;Look at the interviewer&lt;/li&gt;
+  &lt;li&gt;Be polite&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;However, the most important thing is our professional level as we are applying to technical positions. And the interviewer may ask extensive and in-depth questions. For example, when I first take Baidu’s interview, the interviewe firstly ask a simple question and then he asked me to continue to improve my answer and explore all possibilities.&lt;/p&gt;
+
+&lt;p&gt;So before going for an interview, we can review the professional knowledge carefully, especially those important points. Here is a table according to my experience.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Item&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Main Points&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Math&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Linear Algebra, Probability Theory, Discrete Mathematics&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Data Structure&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Tree, Queue, Stack, Hash&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Algorithms&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Basic Algorithms, Advanced ALgorithms&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Programming Language&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Basic Points&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Database&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;SQL query， Stored Procedure…&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;…&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;…&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;In a word, you must make sure you are familiar with most of the basic points.&lt;/p&gt;
+
+&lt;p&gt;Then it comes to the projects you have done. As for this part, you’d better confirm which part you are responsible for, and then try to give a brief summary in the mind. &lt;strong&gt;If you are not sure about something in your project, you’d better not mention it&lt;/strong&gt;. Because the interviewer may ask some questions about it.&lt;/p&gt;
+
+&lt;h5 id=&quot;some-useful-resources&quot;&gt;Some useful resources&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://leetcode.com/&quot;&gt;LeetCode OJ&lt;/a&gt; : a platform for preparing technical coding interviews&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.topcoder.com/&quot;&gt;Topcoder&lt;/a&gt; : a website holding competitions periodically&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://weibo.com/nowcoder?from=feed&amp;amp;loc=nickname&quot;&gt;牛客网&lt;/a&gt; : a collection of interview questions including many famous companies&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://cv.qiaobutang.com/&quot;&gt;乔布简历&lt;/a&gt; : a website offering many CV templates&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://simpleyyt.github.io/daily/2015/05/20/How-to-prepare-for-a-interview</link>
+                <guid>http://simpleyyt.github.io/daily/2015/05/20/How to prepare for a interview</guid>
+                <pubDate>2015-05-20T01:36:44+02:00</pubDate>
+        </item>
+
+        <item>
+                <title>Experience in Alibaba Data Mining Contest</title>
+                <description>&lt;p&gt;Journal For Class English Learning Skills in Academic Contexts&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;This month, I participated in a data mining contest held by Alibaba Corp. During the contest, I learned a lot about algorithms and models. So I’d like to write down the experience and make a summary.&lt;/p&gt;
+
+&lt;p&gt;　The theme of the competition is recommending product or service to the consumers based on the user behavior data which was produced on mobile devices. There is two data sets offered by Alibaba Corp. One is a subset of goods, and the other is the behavior data of 10000 consumers. The time span of the data is a month, including double 12 which is a promotion day. And the final goal is to predict which goods the specific consumer buy on the day following the month. And the evaluation standard is F1 score which can be calculated by precision and recall. [ 2 * precision * recall / ( precision + recall ) ]&lt;/p&gt;
+
+&lt;p&gt;　At first, I looked over the dataset and tried to find out some patterns or outliers. And I realized that the geography data was incomplete. Maybe it is caused by the consumers’ network environment. So I must be careful if I use the geography data in my model. Then I began to establish my model, I think logistic regression could be a good choice which is not complex but practical for many situations. As for the geography data is not complete, I didn’t use it in my model. I just selected consumer behavior and time as the feature of the model. I separated the data into 4 groups. What’s more, December 12th is a special day that lots of promotion activities were held on Alibaba’s electric business platform. So the consumer behavior on that day can be seen as irrational, I must deal with it carefully.&lt;/p&gt;
+
+&lt;p&gt;　In last paragraph, I talked about the outliers on December 12th. I think clustering could be a good choice, as the behaviors may be influenced by the promotion on that day, I decided to clustering them and lower their weight. However, the effect is not very ideal and I have no time exploring more efficient algorithms.&lt;/p&gt;
+
+&lt;p&gt;　It is worth mentioning that I also tried collaborative filtering algorithm in the contest. Unfortunately, the result is too bad because the prediction set will be too large if we tried to find out similarities among so many consumers. Although Amazon is said to use this algorithm and increase their sales significantly, I think the result set is too inaccurate. Maybe they have mixed several algorithms together, or it is difficult to give out a satisfied result with only one algorithm.&lt;/p&gt;
+
+&lt;p&gt;　There are still many algorithms which I haven’t enough time to have a try. I think SVM and decision tree are both available choices in this task.&lt;/p&gt;
+
+&lt;p&gt;　It is a pity that I didn’t qualify for the second round of the match. I am curious about the cloud computing platform developed by Alibaba Corp. I hope I can do better in the next year’s contest.&lt;/p&gt;
+
+&lt;p&gt;　　　　　&lt;a href=&quot;http://tianchi.aliyun.com/&quot;&gt;Alibaba Tianchi Big Data Contest Website&lt;/a&gt;&lt;/p&gt;
+</description>
+                <link>http://simpleyyt.github.io/academic%20english/2015/04/30/Experience-in-Alibaba-Data-Mining-Contest</link>
+                <guid>http://simpleyyt.github.io/academic%20english/2015/04/30/Experience in Alibaba Data Mining Contest</guid>
+                <pubDate>2015-04-30T00:42:44+02:00</pubDate>
+        </item>
+
+        <item>
+                <title>Developing a good coding habit</title>
+                <description>&lt;p&gt;Journal For Class English Learning Skills in Academic Contexts&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Recently, President Obama called on every American to learn code. Coding is becoming more and more important in the future, it can be used not only in computer science, but also in finance, physics and so on. Although I am just a junior student majoring in software engineering, I have much experience in coding and I’d like to summarize them and write something about how to develop a good coding habit in my perspective.&lt;/p&gt;
+
+&lt;p&gt;　Firstly, I think we must be dedicated. Whatever we do, we must concentrate on it, or we will never do a good job. It is especially important in coding. For example, we must choose a coding language before learning coding. When I got in touch with coding at first, I was interesting in all coding languages. I hope I can be proficient in all of them. At last, I got the opposite of what I want, I didn’t do well in either of the languages after a semester. Then I began to concentrate on C++, after practicing for a long time, I find I am much better in understanding a coding language, and it is much easier for me to study other languages.&lt;/p&gt;
+
+&lt;p&gt;　Secondly, I believe practice and thinking are equal important. Some people say, Genuine knowledge comes from the practice. It is apparent that practice is very important. Without tens of thousands of lines of code, nobody can become a great coder. However, thinking is also important, only when we think deeply, can we accumulate experience continuously. Without thinking, there will be little improvement even though practicing day and night.&lt;/p&gt;
+
+&lt;p&gt;　Thirdly, learning to use tools is also a good habit for coding. There is a proverb that a workman must sharpen his tools if he is to do his work well. So I’d like to talk about some useful tools while coding. Github, StackOverFlow and Cloud Storage are essential for an efficient coder. Github is a website using for depositing codes, and the most important point is that most of the codes depositing on Github are opensource. It means that everyone can learn from each other. As for StackOverFlow, it is a website for coder to ask questions. Also, you can get much experience from others’ communication. And Cloud Storage is a broad concept that consists of a series of application like cloud notes. For example, the login system is required in many projects, it is too inefficient for us to code it in every new project. Why not store it in cloud notes? In this way, it can be accessible anywhere and anytime. There is a variety of tools helping coding, it depends on the language you use, the level you are in.&lt;/p&gt;
+
+&lt;p&gt;　At last, confidence is also important while coding. Every time I face a challenge, I will try my best to solve it. And in the process of problem solving, I may search it on the Internet or ask my friends for help. Whichever approach I choose, I will learn some new knowledges which may benefit me a lot in the future.&lt;/p&gt;
+
+&lt;p&gt;　Coding is a fascinating thing and if we develop a good coding habit, I am sure coding will be much easier for us.&lt;/p&gt;
+</description>
+                <link>http://simpleyyt.github.io/academic%20english/2015/04/29/Developing-a-good-coding-habit</link>
+                <guid>http://simpleyyt.github.io/academic%20english/2015/04/29/Developing a good coding habit</guid>
+                <pubDate>2015-04-29T20:50:10+02:00</pubDate>
+        </item>
+
+        <item>
+                <title>The classic of mountains and seas</title>
+                <description>&lt;p&gt;Journal For Class English Learning Skills in Academic Contexts&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Recently, I am reading a book called the classic of mountains and seas. In wikipedia, it is described as a Chinese classic text and a compilation of mythic geography and myth. Versions of the text have existed since the 4th century BC, but the present form was not reached until the early Han dynasty a few centuries later. It is largely a fabulous geographical and cultural account of pre-Qin China as well as a collection of Chinese mythology. The book is divided into eighteen sections; it describes over 550 mountains and 300 channels.&lt;/p&gt;
+
+&lt;p&gt;　The book is very interesting because there are many strange animal and plant lives. Some of them are familiar to us, however, most of them are imaginative. For example, Bifang is a bird with human’s face; Yujiang owns human’s face and bird’s body; Qiongqi is similar to a tiger with wing. While reading the book, I can draw the image of them in my head which is rather interesting thing.&lt;/p&gt;
+
+&lt;p&gt;　What’s more, I can also find out something different from my opinions. For example, Shuniao is to the south of Kaiming, which owns six heads whose names are Jiao, Fu, She, Zhui, Bao and Niao. At first, I think it is another peculiar living thing. However, after searching for it through the Internet, it is told that it is euivalent to the guideboard in modern society, and the six heads means six different tribes.&lt;/p&gt;
+
+&lt;p&gt;　At last, I think the book is different from the other ancient books. The book describes different mountains and seas objectively and the language is even a little plain and boring. But in another perspective, the book is highly concise and we can easily find the relations between different objects. In north America, some geographer moves along the book’s description, and it is amazing that the position of the mountains and seas are rather similar to that in the book. As a result, some people believe that the book not only describes the geographical situation of ancient China, but also includes the whole world’s natural environment.&lt;/p&gt;
+
+&lt;p&gt;　Anyhow, the book attracts me a lot, I can find various imaginative things in it. Maybe I can buy some other relevant books and know more about the mysterious book.&lt;/p&gt;
+</description>
+                <link>http://simpleyyt.github.io/academic%20english/2015/04/27/The-classic-of-mountains-and-seas</link>
+                <guid>http://simpleyyt.github.io/academic%20english/2015/04/27/The classic of mountains and seas</guid>
+                <pubDate>2015-04-27T15:10:10+02:00</pubDate>
+        </item>
+
+        <item>
+                <title>Effective reading</title>
+                <description>&lt;p&gt;Journal For Class English Learning Skills in Academic Contexts&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;This week, we talked about how to be an active and critical reader in the class. I think it could be called effective reading which is more and more important in modern society. So I’d like to gather the relevant material and reflect on my own reading habit.&lt;/p&gt;
+
+&lt;p&gt;　In the textbook, there are six reading habits which are offered by Harvard University. But I don’t think they are suitable for everyone. So I will try to develop a new series of reading habit with the old ones.&lt;/p&gt;
+
+&lt;p&gt;　Firstly, previewing is useful while reading a new book, however, just looking around the text is not enough. Maybe I could do more before reading a book in detail. So why not establish a knowledge graph before reading? As I am a coder, I will build a knowledge graph with javascript, a script language which is always used in data visualization. With the knowledge graph, I can find out the relations among many books and the book which I hava not yet read. In this way, I will know more backgrounds about the book and it may help me comprehend the book better.&lt;/p&gt;
+
+&lt;p&gt;　Secondly, annotating is also a good reading habit. It is important for us to highlight the useful point and it will be more easy for us to review what the book talked about after a period of time.&lt;/p&gt;
+
+&lt;p&gt;　Thirdly, outlining, summarizing and analyzing are significant for us to understand the essence of the book. Outlining help us get the architecture of the book. Summarizing is the way for us to retell the book. As for analyzing, I can comprehend the book in my own perspective.&lt;/p&gt;
+
+&lt;p&gt;　Fourthly, looking for repetitions and patterns is also mentioned. But I don’t think this is suitable for me while reading a book. It is so complicated to find out the repetitions and patterns that too much time will be spent. And it may make me feel boring. So it is not a good idea to spend too much time looking for repetitions and patterns.&lt;/p&gt;
+
+&lt;p&gt;　Fifthly, contextualizing is another useful skill while reading especially in some difficult parts of a book. Contextualizing will be helpful to understand some sentences or paragraphs, but it will not be a good idea to depend on it at any time. As it could lead to fragmented understanding.&lt;/p&gt;
+
+&lt;p&gt;　At last, comparing and contrasting, which is the most important in my view, is useful in any book. And knowledge graph can also be used here, because it is a intuitive way for us to describe the differences and analogies among books. For example, &lt;em&gt;Atlas Shrugged&lt;/em&gt; and &lt;em&gt;Fountain&lt;/em&gt; are both written by &lt;em&gt;Ayn Rand&lt;/em&gt;. But they were not finished at the same time, after comparing the two books, we can find out the author’s change of thought.&lt;/p&gt;
+
+&lt;p&gt;　Effective reading is also referred in modern society, with the skills above, I am sure I can do better while reading.&lt;/p&gt;
+</description>
+                <link>http://simpleyyt.github.io/academic%20english/2015/04/26/Effective-Reading</link>
+                <guid>http://simpleyyt.github.io/academic%20english/2015/04/26/Effective Reading</guid>
+                <pubDate>2015-04-26T17:22:40+02:00</pubDate>
+        </item>
+
+        <item>
+                <title>Will belief make us more powerful?</title>
+                <description>&lt;p&gt;Journal For Class English Learning Skills in Academic Contexts&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Last winter vocation, I saw the movie &lt;em&gt;Wolf Totem&lt;/em&gt; which is adapted from the novel of the same name. The movie itself is impressive and it calls for environment protection again. Apparently, people living on the grassland have their own believes but the outsiders broke their believes, as a result, they think they were punished by the god. The people living on the grassland revered the nature with their believes, it seems that their believes make them powerful. But in the end, it is also the belief which makes them too afraid to change their life. Unfortunately, a disaster happened on the grassland. So there is a question, will belief make us more powerful?&lt;/p&gt;
+
+&lt;p&gt;　It is difficult to answer the question. Similar debates are happening every day in the real world. For example, some people believe that we should obey the nature laws and say no to GM technology, however, the other say that we have to face the food shortage and GM technology is very important. It is ambivalent for us to tell which is right. Belief is a mental representation, treated in various academic disciplines, especially philosophy and psychology, of a sentient being’s attitude toward the likelihood or truth of something. This is the definition of belief given by Wikipedia. So I think we can regard belief as restraint, then sometimes it may produce good effect because it could be the baseline. However, it could also be the bondage of exploration.&lt;/p&gt;
+
+&lt;p&gt;　Under such circumstances, how to look on belief may be a difficult choice, but it is easy for us to choose. If you are conservative, you can just do the reasonable things. Otherwise, if you are adventurous, you can try your best to explore the world. Both of them are the power for the world, different people have different ways to contribute to the world. This is the diversity of a population.&lt;/p&gt;
+
+&lt;p&gt;　We can conclude that belief surely make us more powerful as different people have different opinions upon it. Even in the movie, there is also brave person like the leading character who is trying to cross the dogs and wolves and break the belief. So no matter we choose to honor the belief or break it, they are all roads to progress.&lt;/p&gt;
+</description>
+                <link>http://simpleyyt.github.io/academic%20english/2015/04/16/Will-belief-make-us-more-powerful</link>
+                <guid>http://simpleyyt.github.io/academic%20english/2015/04/16/Will belief make us more powerful</guid>
+                <pubDate>2015-04-16T17:22:40+02:00</pubDate>
+        </item>
+
+        <item>
+                <title>The impression of reading Atlas Shrugged</title>
+                <description>&lt;p&gt;Journal For Class English Learning Skills in Academic Contexts&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Recently, I have finished reading a novel named &lt;em&gt;Atlas Shrugged&lt;/em&gt; which is written by Ayn Rand. The novel really impressed me so I’d like to write down the feelings after reading the novel.&lt;/p&gt;
+
+&lt;p&gt;　The book depicts a dystopian United States, wherein many of society’s most prominent and successful industrialists abandon their fortunes and the nation itself, in response to aggressive new regulations, whereupon most vital industries collapse. It is obvious that the novel advocates individualistic heroism and liberalism. The people are divided into two kinds, one is a group of heroes who are so outstanding that they dominate the whole world, however the other is a group of people who are seen as parasite, they contribute less to the world but they always ask for a lot and once they are not satisfied, they will call a strike. In the author’s pen, she praise the heroes a lot and look down upon the others. Maybe the scene described in the novel is a little extreme, but the author offers us a new way to think about our society. The question is that how to balance the interests of mass and elite. We have to admit that there are only a few people making a great contribution to the course of human history. As for the others, they are even doing the opposite things sometimes. Under such circumstance, if we always emphasize that all men are created equal, is it fair then?&lt;/p&gt;
+
+&lt;p&gt;　There is also another interesting detail that the sentence “&lt;em&gt;Who is John Galt?&lt;/em&gt;” appears frequently in the novel. It could be seen anywhere and said by any person. When I began to read the novel, the recurring sentence confused me a lot because the person John Galt didn’t appear at all. But as I read this book, I find the sentence seems to be a slogan, it means the pursuit in the heroes’ heart.&lt;/p&gt;
+
+&lt;p&gt;　In a word, the novel is so attractive because it makes me reflect on our society. Although some of the opinions in the novel is so rational that they could even be seen as cruelty, we should understand that compromise may be a good way to get peace, but will never be the way to promote society progress.&lt;/p&gt;
+</description>
+                <link>http://simpleyyt.github.io/academic%20english/2015/04/16/The-impression-of-reading-Atlas-Shrugged</link>
+                <guid>http://simpleyyt.github.io/academic%20english/2015/04/16/The impression of reading Atlas Shrugged</guid>
+                <pubDate>2015-04-16T17:22:40+02:00</pubDate>
+        </item>
+
+        <item>
+                <title>Time</title>
+                <description>&lt;p&gt;Journal For Class English Learning Skills in Academic Contexts&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;In the end of today’s class, we listen to a music called &lt;em&gt;where has all the time gone&lt;/em&gt;. Our teacher suggested that we might think about the passing time. As for me, it is quite a good question. It has been 3 years since I graduated from high school, but to tell the truth, I didn’t achieve most of the goals which was set at first.&lt;/p&gt;
+
+&lt;p&gt;　Maybe it is a good opportunity for me to reflect. It will be meaningful for me to list all the unfulfilled goals. The first goal is about my major, because my major is software engineering, my goal is to be a great coder and even become a geek. So when I was a freshman, I told myself that I must practice coding every day. However, I didn’t do it very well, in the past 3 years, there were always all kinds of chores disturbing me so that I seldom concentrated on coding. In my opinion, coding is an exciting job. I can create wonderful applications with a variety of programming languages and tools. So what is the problem for me? Maybe I always think too much and do too little. In the future, it is better for me to think less, I must concentrate on one project in a period of time, or I won’t complete either of them.&lt;/p&gt;
+
+&lt;p&gt;　The second goal is studying English well. When I was in high school, my listening and speaking skills are not very proficient. So I decided to get up early and practice them every day. But in most of the time, I didn’t do it very well. And now, my listening is better, but my oral English is still not good. I think the reason why I didn’t make it is that the plan is too long and not clear, as a result, there is no assessment about my task fulfillment. So I won’t develop a long plan for my English study, I just learn English in all possible fragments of time.&lt;/p&gt;
+
+&lt;p&gt;　What’s more, there are also many small goals during the past 3 years. Some of them were achieved, and some of them were not completed well. How time flies! Setting goals is always easy, but it is difficult for us to finish them with persistent efforts.&lt;/p&gt;
+
+&lt;p&gt;Time is treasure, we must cherish it!&lt;/p&gt;
+</description>
+                <link>http://simpleyyt.github.io/academic%20english/2015/04/16/TIme</link>
+                <guid>http://simpleyyt.github.io/academic%20english/2015/04/16/TIme</guid>
+                <pubDate>2015-04-16T17:22:40+02:00</pubDate>
+        </item>
+
+        <item>
+                <title>Big data</title>
+                <description>&lt;p&gt;Journal For Class English Learning Skills in Academic Contexts&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Nowadays, big data is a very hot concept. It seems that the big data era is coming. We can see it from a variety of media. All the companies are paying much attention to big data, and even every people are talking about it. However, I think it is quite an irrational phenomenon, in my opinion, big data is just a solution to problem, but it will never be the solution to all the problems.&lt;/p&gt;
+
+&lt;p&gt;　So I’d like to talk about big data from my major’s perspective. What is big data? Wikipedia tells us that big data is a broad term for data sets so large or complex that traditional data processing applications are inadequate. So the point is the traditional way is not proper for the new problems. However, the concept has been abusive apparently. For example, there are many companies talking about big data now, a dating site said high-income groups have a greater chance of dating success based on big data. I think it is such a ridiculous conclusion as it is an obvious fact. Even if we need a proof of the fact, some statistical sampling is enough, big data analysis is a wasting of computing resources.&lt;/p&gt;
+
+&lt;p&gt;　Big data should be used carefully and accurately. The &lt;em&gt;Google’s Flu Trend&lt;/em&gt; and &lt;em&gt;Walmart’s beer and diapers&lt;/em&gt; are two classical cases. We can find lots of commons between them. The fact they find out is difficult to notice. And this is the power of big data.&lt;/p&gt;
+
+&lt;p&gt;　Now I am studying the relevant tools which are often used in big data analysis. I hope I can become a data scientist one day. My ideal is to create a artificial brain which owns the ability of independent thinking. Big data can be used to train the brain. Then the brain can accept all kinds of inputs and give out different outputs under different circumstances. For example, when a consumer log on to a e-commerce website, the brain can analyze what the consumer will buy at that time intelligently.&lt;/p&gt;
+
+&lt;p&gt;　These are some of my ideas about big data. I am sure big data can make our life more intelligent and convenient.&lt;/p&gt;
+</description>
+                <link>http://simpleyyt.github.io/academic%20english/2015/04/16/Big-data</link>
+                <guid>http://simpleyyt.github.io/academic%20english/2015/04/16/Big data</guid>
+                <pubDate>2015-04-16T17:22:40+02:00</pubDate>
+        </item>
+
+
+</channel>
+</rss>

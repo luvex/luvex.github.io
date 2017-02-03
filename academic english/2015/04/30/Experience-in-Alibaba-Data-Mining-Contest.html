@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>Experience in Alibaba Data Mining Contest</title>
+    
+	
+	<meta name="author" content="luvex">
+	
+	<link rel="stylesheet" href="/assets/themes/Snail/css/jquery.fancybox.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/main.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/pages/journal.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/team.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/static.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/errors.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/google-code-prettify/prettify.css">
+	
+	<link rel="shortcut icon" href="/assets/themes/Snail/img/favicon.ico">
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/auto_loadmore.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/google-code-prettify/prettify.js"></script>
+	
+	<script type="text/javascript">
+	  $(function(){
+		$("pre code").addClass("prettyprint linenums");
+		prettyPrint();
+	  });
+	</script>
+	
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+</head>
+<body>
+	<noscript>
+		&amp;lt;div id="no-js"&amp;gt;Please enable JavaScript in your browser to experience / fully&amp;lt;/div&amp;gt;
+	</noscript>
+    <div id="page-container">
+		<div>
+			<nav>
+	<div id="nav-l">
+	</div>
+	<div id="nav-c">
+		<ul id="nav-list" style="width: 700px;">
+			<li id="home"><a href="/">Home</a></li>
+			
+			
+			
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "About Me"><a href="/about">About Me</a></li>
+					
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Archive"><a href="/archive">Archive</a></li>
+					
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Categories"><a href="/categories">Categories</a></li>
+					
+				  
+				
+			 
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Tags"><a href="/tags">Tags</a></li>
+					
+				  
+				
+			 
+				
+			 
+				
+			 
+			
+			
+		</ul>
+		<form id="nav-search" method="GET" action="/search.html">
+			<div id="search-right-pix">
+				<div id="search-left-pix">
+					<div id="search-center-pix">
+						<div id="search-icon-pix"></div>
+						<input name="query" type="text" placeholder="Search">
+					</div>
+				</div>
+			</div>
+		</form>
+		
+		
+	</div>
+	<div id="nav-r">
+	</div>
+</nav>
+			<div id="page-content">
+				
+<div id="page-content">
+	<div class="cont932">
+	<div id="journal-articles-block">
+		<div class="journal-article">
+			<div class="journal-post-info">
+				<div class="journal-cat-box">
+				
+				
+				<div class="journal-cat-box">
+
+<a href="/categories.html#Academic English-ref" title="Academic English">
+	Academic English
+
+</a>
+</div>
+				
+				</div>
+			</div>
+			<div class="journal-body">
+				<h1 class="journal-title">Experience in Alibaba Data Mining Contest<span class="author">by luvex</span>
+				</h1>
+				<span class="the-article">
+				<p>Journal For Class English Learning Skills in Academic Contexts</p>
+
+<!--more-->
+
+<p>This month, I participated in a data mining contest held by Alibaba Corp. During the contest, I learned a lot about algorithms and models. So I’d like to write down the experience and make a summary.</p>
+
+<p>　The theme of the competition is recommending product or service to the consumers based on the user behavior data which was produced on mobile devices. There is two data sets offered by Alibaba Corp. One is a subset of goods, and the other is the behavior data of 10000 consumers. The time span of the data is a month, including double 12 which is a promotion day. And the final goal is to predict which goods the specific consumer buy on the day following the month. And the evaluation standard is F1 score which can be calculated by precision and recall. [ 2 * precision * recall / ( precision + recall ) ]</p>
+
+<p>　At first, I looked over the dataset and tried to find out some patterns or outliers. And I realized that the geography data was incomplete. Maybe it is caused by the consumers’ network environment. So I must be careful if I use the geography data in my model. Then I began to establish my model, I think logistic regression could be a good choice which is not complex but practical for many situations. As for the geography data is not complete, I didn’t use it in my model. I just selected consumer behavior and time as the feature of the model. I separated the data into 4 groups. What’s more, December 12th is a special day that lots of promotion activities were held on Alibaba’s electric business platform. So the consumer behavior on that day can be seen as irrational, I must deal with it carefully.</p>
+
+<p>　In last paragraph, I talked about the outliers on December 12th. I think clustering could be a good choice, as the behaviors may be influenced by the promotion on that day, I decided to clustering them and lower their weight. However, the effect is not very ideal and I have no time exploring more efficient algorithms.</p>
+
+<p>　It is worth mentioning that I also tried collaborative filtering algorithm in the contest. Unfortunately, the result is too bad because the prediction set will be too large if we tried to find out similarities among so many consumers. Although Amazon is said to use this algorithm and increase their sales significantly, I think the result set is too inaccurate. Maybe they have mixed several algorithms together, or it is difficult to give out a satisfied result with only one algorithm.</p>
+
+<p>　There are still many algorithms which I haven’t enough time to have a try. I think SVM and decision tree are both available choices in this task.</p>
+
+<p>　It is a pity that I didn’t qualify for the second round of the match. I am curious about the cloud computing platform developed by Alibaba Corp. I hope I can do better in the next year’s contest.</p>
+
+<p>　　　　　<a href="http://tianchi.aliyun.com/">Alibaba Tianchi Big Data Contest Website</a></p>
+
+				</span>
+				<div class="journal-date">Published 30 April 2015</div>
+				<div class="journal-tags">
+				
+				
+	 
+		<a class="tag-cont" href="/tags.html#Journal-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">Journal</div>
+			<div class="tag-r"></div>
+		</a>
+	
+
+
+
+				</div>
+			</div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+</div>
+	<div class="clearboth"></div>
+	
+
+
+  <!-- 多说评论框 start -->
+<div id="comments">
+    <div class="ds-thread" data-thread-key="/academic%20english/2015/04/30/Experience in Alibaba Data Mining Contest"  data-title="Experience in Alibaba Data Mining Contest - CoderX"></div>
+</div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"simpleyyt"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+	<div class="clearboth"></div>
+</div>
+
+			</div>
+			<div class="clearboth pagebottom"></div>
+		</div>
+	</div>
+	<footer>
+	<div class="footer-940">
+		<div class="footer-general-info">
+			© 2014 luvex.<br><br>
+			Content licensed under:<br>
+			<a class="cc" href="http://creativecommons.org/licenses/by-sa/3.0/">c a b</a><br>
+			<a href = "/about.html">About Me</a><br>
+		</div>
+		<div class="footer-col-cont">
+			<div class="footer-nav-col">
+				<h4><a>Categories</a></h4>
+				<ul>
+					
+					
+
+
+  
+     
+    	<li><a href="/categories.html#Academic English-ref">
+    		Academic English <span>8</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#Daily-ref">
+    		Daily <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#CSharp-ref">
+    		CSharp <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#Reading-ref">
+    		Reading <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#OpenCV-ref">
+    		OpenCV <span>1</span>
+    	</a></li>
+    
+  
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Pages</a></h4>
+				<ul>
+					
+					
+					
+
+
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/about">About Me</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+    
+  
+    
+  
+
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Feed</a></h4>
+				<ul>
+					<li><a href="/atom.xml">Atom Feed</a></li>
+					<li><a href="/rss.xml">RSS Feed</a></li>
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Links</a></h4>
+				<ul>
+				 
+					<li><a href = "http://luvex.github.io/">luvex's Blog</a></li>
+				
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a href = "/about.html">About Me</a></h4>
+				<ul>
+				 
+					<li><a href = "mailto:maxin_kevin@hotmail.com">e-mail</a></li>
+				 
+					<li><a href = "https://github.com/luvex">Github</a></li>
+				 
+					<li><a href = "http://www.weibo.com/u/1609515304">WeiBo</a></li>
+				
+				</ul>
+			</div>
+			<div class="clearboth"></div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+	<div class="clearboth"></div>
+</footer>
+	
+</body>
+</html>
+

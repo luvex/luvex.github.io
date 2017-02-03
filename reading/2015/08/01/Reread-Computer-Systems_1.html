@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>Reread Computer System a programmer's perspective Chapter_1</title>
+    
+	
+	<meta name="author" content="luvex">
+	
+	<link rel="stylesheet" href="/assets/themes/Snail/css/jquery.fancybox.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/main.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/pages/journal.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/team.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/static.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/errors.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/google-code-prettify/prettify.css">
+	
+	<link rel="shortcut icon" href="/assets/themes/Snail/img/favicon.ico">
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/auto_loadmore.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/google-code-prettify/prettify.js"></script>
+	
+	<script type="text/javascript">
+	  $(function(){
+		$("pre code").addClass("prettyprint linenums");
+		prettyPrint();
+	  });
+	</script>
+	
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+</head>
+<body>
+	<noscript>
+		&amp;lt;div id="no-js"&amp;gt;Please enable JavaScript in your browser to experience / fully&amp;lt;/div&amp;gt;
+	</noscript>
+    <div id="page-container">
+		<div>
+			<nav>
+	<div id="nav-l">
+	</div>
+	<div id="nav-c">
+		<ul id="nav-list" style="width: 700px;">
+			<li id="home"><a href="/">Home</a></li>
+			
+			
+			
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "About Me"><a href="/about">About Me</a></li>
+					
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Archive"><a href="/archive">Archive</a></li>
+					
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Categories"><a href="/categories">Categories</a></li>
+					
+				  
+				
+			 
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Tags"><a href="/tags">Tags</a></li>
+					
+				  
+				
+			 
+				
+			 
+				
+			 
+			
+			
+		</ul>
+		<form id="nav-search" method="GET" action="/search.html">
+			<div id="search-right-pix">
+				<div id="search-left-pix">
+					<div id="search-center-pix">
+						<div id="search-icon-pix"></div>
+						<input name="query" type="text" placeholder="Search">
+					</div>
+				</div>
+			</div>
+		</form>
+		
+		
+	</div>
+	<div id="nav-r">
+	</div>
+</nav>
+			<div id="page-content">
+				
+<div id="page-content">
+	<div class="cont932">
+	<div id="journal-articles-block">
+		<div class="journal-article">
+			<div class="journal-post-info">
+				<div class="journal-cat-box">
+				
+				
+				<div class="journal-cat-box">
+
+<a href="/categories.html#Reading-ref" title="Reading">
+	Reading
+
+</a>
+</div>
+				
+				</div>
+			</div>
+			<div class="journal-body">
+				<h1 class="journal-title">Reread Computer System a programmer's perspective Chapter_1<span class="author">by luvex</span>
+				</h1>
+				<span class="the-article">
+				<p>A review of rereading chapter 1.</p>
+
+<!--more-->
+
+<p>Contents of Chapter 1:</p>
+
+<ol>
+  <li>Information Is Bits + Context</li>
+  <li>Programs Are Translated by Other Programs into Different Forms</li>
+  <li>It Pays to Understand How Compilation System Work</li>
+  <li>Processors Read and Interpret Instructions Stored in Memory</li>
+  <li>Caches Matter</li>
+  <li>Storage Devices Form a Hierarchy</li>
+  <li>The Operating System Manages the Hardware</li>
+  <li>Systems Communicate with Other Systems Using Networks</li>
+  <li>Important Themes</li>
+  <li>Summary</li>
+</ol>
+
+<p>In Chapter 1, the author briefly introduces what will be involved in the whole book, and the core topic is <strong>abstraction</strong> in my opinion.</p>
+
+<p>And here are several points which I haven’t thought of before.</p>
+
+<p>Firstly, what is information? The author tells us information is Bits+Context. Maybe this is even more important in age of big data. While programming, context must be considered carefully. It is a good way to produce codes with good performance.</p>
+
+<p>Secondly, <strong>all I/O devices</strong> are regarded as <strong>files</strong> in modern operating systems. Obviously, it is a high abstraction and such ideas could be rather helpful for programmers.</p>
+
+<p>Here are some knowledge points to review:</p>
+
+<ul>
+  <li>There are two kinds of file text file(consist of ASCII characters) and binary file(All other files).</li>
+  <li>The flow of compilation: (a C program example)
+    <ul>
+      <li>Preprocessing phase: generate another C program according directives(begin with #) with the .i suffix</li>
+      <li>Compilation phase: translate the text file to another text file with the .s suffix which contains an <strong>assembly language program</strong></li>
+      <li>Assembly phase: From assembly language To <strong>machine language</strong>(binary file with .o suffix)</li>
+      <li>Linking phase: generate executable object file linking some standard library.</li>
+    </ul>
+  </li>
+  <li>Hardware Organization of a System:
+    <ul>
+      <li><img src="http://images.cnblogs.com/cnblogs_com/mydomain/201105/201105291545256647.png" alt="Hardware organization of a typical system" /></li>
+    </ul>
+  </li>
+  <li>Multi-level cache. (Smaller-&gt;faster)
+    <ul>
+      <li><img src="http://img.blog.csdn.net/20130711103254515?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQl9IX0w=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="An example of a memory hierarchy" /></li>
+    </ul>
+  </li>
+  <li>Abstraction is provided by OS</li>
+  <li>Virtual memory
+    <ul>
+      <li><img src="http://img.blog.csdn.net/20130711100004453?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQl9IX0w=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="Process virtual address space" /></li>
+    </ul>
+  </li>
+  <li>Concurrency and Parallelism
+    <ul>
+      <li>Thread-Level Concurrency</li>
+      <li>Instruction-Level Concurrency</li>
+      <li>Single-Instruction, Multiple-Data (SIMD) Parallelism</li>
+    </ul>
+  </li>
+  <li>Three fundamental abstractions:
+    <ul>
+      <li>Files –&gt; I/O devices</li>
+      <li>Virtual memory –&gt; Both main memory and disks</li>
+      <li>Processes –&gt; the processor, main memory and I/O device</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Also the differences between concurrency and parallelism should be noticed:</p>
+
+<ul>
+  <li>Concurrency is a macroscopic concept which means several processes can run at the same time with one CPU, (share one CPU).</li>
+  <li>Parallelism means several processes can run via several CPUs at the same time, (each owns one CPU).</li>
+</ul>
+
+
+				</span>
+				<div class="journal-date">Published 01 August 2015</div>
+				<div class="journal-tags">
+				
+				
+	 
+		<a class="tag-cont" href="/tags.html#Computer-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">Computer</div>
+			<div class="tag-r"></div>
+		</a>
+	 
+		<a class="tag-cont" href="/tags.html#System-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">System</div>
+			<div class="tag-r"></div>
+		</a>
+	
+
+
+
+				</div>
+			</div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+</div>
+	<div class="clearboth"></div>
+	
+
+
+  <!-- 多说评论框 start -->
+<div id="comments">
+    <div class="ds-thread" data-thread-key="/reading/2015/08/01/Reread Computer Systems_1"  data-title="Reread Computer System a programmer's perspective Chapter_1 - CoderX"></div>
+</div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"simpleyyt"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+	<div class="clearboth"></div>
+</div>
+
+			</div>
+			<div class="clearboth pagebottom"></div>
+		</div>
+	</div>
+	<footer>
+	<div class="footer-940">
+		<div class="footer-general-info">
+			© 2014 luvex.<br><br>
+			Content licensed under:<br>
+			<a class="cc" href="http://creativecommons.org/licenses/by-sa/3.0/">c a b</a><br>
+			<a href = "/about.html">About Me</a><br>
+		</div>
+		<div class="footer-col-cont">
+			<div class="footer-nav-col">
+				<h4><a>Categories</a></h4>
+				<ul>
+					
+					
+
+
+  
+     
+    	<li><a href="/categories.html#Academic English-ref">
+    		Academic English <span>8</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#Daily-ref">
+    		Daily <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#CSharp-ref">
+    		CSharp <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#Reading-ref">
+    		Reading <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#OpenCV-ref">
+    		OpenCV <span>1</span>
+    	</a></li>
+    
+  
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Pages</a></h4>
+				<ul>
+					
+					
+					
+
+
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/about">About Me</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+    
+  
+    
+  
+
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Feed</a></h4>
+				<ul>
+					<li><a href="/atom.xml">Atom Feed</a></li>
+					<li><a href="/rss.xml">RSS Feed</a></li>
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Links</a></h4>
+				<ul>
+				 
+					<li><a href = "http://luvex.github.io/">luvex's Blog</a></li>
+				
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a href = "/about.html">About Me</a></h4>
+				<ul>
+				 
+					<li><a href = "mailto:maxin_kevin@hotmail.com">e-mail</a></li>
+				 
+					<li><a href = "https://github.com/luvex">Github</a></li>
+				 
+					<li><a href = "http://www.weibo.com/u/1609515304">WeiBo</a></li>
+				
+				</ul>
+			</div>
+			<div class="clearboth"></div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+	<div class="clearboth"></div>
+</footer>
+	
+</body>
+</html>
+

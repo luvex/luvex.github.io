@@ -156,12 +156,12 @@
 				<h1 class="journal-title">OpenCV Configuration on Windows10<span class="author">by luvex</span>
 				</h1>
 				<span class="the-article">
-				<p>The configuration is based on Win10(64 bit), CUDA8.0, CMake 64bit(3.6.3), TBB, OpenCV 3.1 source code, Visual Studio 2015.
+				<p>The configuration is based on Win10(64 bit), CUDA8.0, CMake 64 bit(3.6.3), TBB, OpenCV 3.1 source code, Visual Studio 2015.
 (Laptop SurfaceBook, 16GB RAM, 500G SSD, i7-6600U, Nvidia GPU(1GB RAM))</p>
 
 <!--more-->
 
-<p>I learned OpenCV under the guidance of professor <a href="http://www.i3s.unice.fr/~precioso/">Frédéric Precioso</a> in <a href="http://www.polytechnice.fr/">Polytech Nice-Sophia</a>, Nice, France.</p>
+<p><em>I learned OpenCV under the guidance of professor <a href="http://www.i3s.unice.fr/~precioso/">Frédéric Precioso</a> in <a href="http://www.polytechnice.fr/">Polytech Nice-Sophia</a>, Nice, France.</em></p>
 
 <p>Normally, it is a better chocie to play with OpenCV on some development kit like <a href="http://www.nvidia.com/object/jetson-tk1-embedded-dev-kit.html">NVIDIA Jetson TK1</a>. But we can also try it with our pour hardware for fun^-^</p>
 
@@ -177,33 +177,108 @@
 
 <p>After downloading and installing these tools and source codes, we can go to next procedure.</p>
 
-<h3 id="procedure-1">Procedure 1</h3>
-
-<picture>
-    <source srcset="/generated/1-1050by918-520617.png" media="(min-width: 40em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 40em) and (min-resolution: 144dpi)" />
-    <source srcset="/generated/1-700by612-520617.png" media="(min-width: 40em)" />
-    <source srcset="/generated/1-675by590-520617.png" media="(min-width: 30em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 30em) and (min-resolution: 144dpi)" />
-    <source srcset="/generated/1-450by393-520617.png" media="(min-width: 30em)" />
-    <source srcset="/generated/1-525by300-520617.png" media="(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)" />
-    <source srcset="/generated/1-350by200-520617.png" />
-    <img src="/generated/1-350by200-520617.png" class="blog-full" itemprop="image" alt="cmake.png" />
-  </picture>
+<h3 id="procedure-1-configure-and-generate-sln">Procedure 1 configure and generate .sln</h3>
 
 <p>In this part, we need to configure and generate the VS solution.</p>
 
-<ol>
+<ul>
   <li>open CMake, and choose the source directory(OpenCV code) and destination directory(can be any path).</li>
-  <li>click configure, a dialog will pop up for choosing the compiler(vs 2015 64bit for me)</li>
-  <li></li>
+  <li>click configure, a dialog will pop up and we can choose the compiler(vs 2015 64 bit for me)
+    <picture>
+  <source srcset="/generated/1-1050by918-520617.png" media="(min-width: 40em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 40em) and (min-resolution: 144dpi)" />
+  <source srcset="/generated/1-700by612-520617.png" media="(min-width: 40em)" />
+  <source srcset="/generated/1-675by590-520617.png" media="(min-width: 30em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 30em) and (min-resolution: 144dpi)" />
+  <source srcset="/generated/1-450by393-520617.png" media="(min-width: 30em)" />
+  <source srcset="/generated/1-525by300-520617.png" media="(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)" />
+  <source srcset="/generated/1-350by200-520617.png" />
+  <img src="/generated/1-350by200-520617.png" class="blog-full" itemprop="image" alt="cmake.png" />
+</picture>
+  </li>
+  <li>the first configure will take some time, and it will give some errors, we need to click several options
+    <ul>
+      <li>BUILD_EXAMPLES: sample codes</li>
+      <li>OENCV_EXTRA_MODULES_PATH: put the path of <code>opencv\_contrib</code> source code here</li>
+      <li>WITH_CUDA</li>
+      <li>WITH_TBB: after click this(cmake will report include dirs not found, we need to put the path of tbb there, the finall configuration should be like below)</li>
+      <li>
+        <picture>
+</picture>
+      </li>
+    </ul>
+    <source srcset="/generated/2-1050by825-962aee.png" media="(min-width: 40em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 40em) and (min-resolution: 144dpi)" />
+
+    <source srcset="/generated/2-700by550-962aee.png" media="(min-width: 40em)" />
+
+    <source srcset="/generated/2-675by530-962aee.png" media="(min-width: 30em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 30em) and (min-resolution: 144dpi)" />
+
+    <source srcset="/generated/2-450by354-962aee.png" media="(min-width: 30em)" />
+
+    <source srcset="/generated/2-525by300-962aee.png" media="(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)" />
+
+    <source srcset="/generated/2-350by200-962aee.png" />
+
+    <p><img src="/generated/2-350by200-962aee.png" class="blog-full" itemprop="image" alt="cmake.png" />
+&lt;/picture&gt;</p>
+  </li>
+  <li>after configuration succeessfully(no red highlight or configure bugs), we can generate the solution, you can find OpenCV.sln in destination directory</li>
+</ul>
+
+<p>some hints:</p>
+
+<ol>
+  <li>if cmkae cannot find some head files during configuration, it could be some unix-like head file, you can find replacement solution on Internet, and put them in your local compiler library</li>
+  <li>if some modules continue reporting bugs, you can check if it is mandatory for you, if not, you can just unclick it</li>
 </ol>
 
-<h5 id="some-useful-resources">Some useful resources</h5>
+<h3 id="procedure-2-build-the-source-code">Procedure 2 build the source code</h3>
+
+<p>In this part, we can compile and build the solution.</p>
+
+<p>The solution should like below: (<code>samples</code> includes sample codes, <code>modules</code> includes various libs)</p>
+
+<picture>
+    <source srcset="/generated/3-694by721-81e89b.png" media="(min-width: 40em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 40em) and (min-resolution: 144dpi)" />
+    <source srcset="/generated/3-694by721-81e89b.png" media="(min-width: 40em)" />
+    <source srcset="/generated/3-675by701-81e89b.png" media="(min-width: 30em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 30em) and (min-resolution: 144dpi)" />
+    <source srcset="/generated/3-450by468-81e89b.png" media="(min-width: 30em)" />
+    <source srcset="/generated/3-525by300-81e89b.png" media="(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)" />
+    <source srcset="/generated/3-350by200-81e89b.png" />
+    <img src="/generated/3-350by200-81e89b.png" class="blog-full" itemprop="image" alt="cmake.png" />
+  </picture>
 
 <ul>
-  <li><a href="https://leetcode.com/">LeetCode OJ</a> : a platform for preparing technical coding interviews</li>
-  <li><a href="http://www.topcoder.com/">Topcoder</a> : a website holding competitions periodically</li>
-  <li><a href="http://weibo.com/nowcoder?from=feed&amp;loc=nickname">牛客网</a> : a collection of interview questions including many famous companies</li>
-  <li><a href="http://cv.qiaobutang.com/">乔布简历</a> : a website offering many CV templates</li>
+  <li>We can build all the codes together (build the <code>INSTALL</code> project under <code>CMakeTargets</code>), normally it takes 1 hour for my laptop, there must be lots of bugs for first build</li>
+  <li>So we’d better build the codes we want to use one by one, then we will not generate a lot of useless lib and escape from endless bugs</li>
+</ul>
+
+<p>hint:</p>
+
+<ul>
+  <li>just remove the useless reference and lib if you can not fix it, because some libs are not finished, don’t waste time on it</li>
+</ul>
+
+<h3 id="procesure-3-test">Procesure 3 test</h3>
+
+<p>I use the <code>/sample/gpu/surface_keypoint_matcher</code> to do the test, I build it and find the <code>.exe</code> file in <code>../bin/Debug/</code> folder, you can also set the parameters in VS to run it.</p>
+
+<p>The result looks like below:</p>
+
+<picture>
+    <source srcset="/generated/4-1050by810-a08fd6.png" media="(min-width: 40em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 40em) and (min-resolution: 144dpi)" />
+    <source srcset="/generated/4-700by540-a08fd6.png" media="(min-width: 40em)" />
+    <source srcset="/generated/4-675by520-a08fd6.png" media="(min-width: 30em) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 30em) and (min-resolution: 144dpi)" />
+    <source srcset="/generated/4-450by347-a08fd6.png" media="(min-width: 30em)" />
+    <source srcset="/generated/4-525by300-a08fd6.png" media="(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)" />
+    <source srcset="/generated/4-350by200-a08fd6.png" />
+    <img src="/generated/4-350by200-a08fd6.png" class="blog-full" itemprop="image" alt="cmake.png" />
+  </picture>
+
+<p>This is a code for matching the surface of objects in two images, you can try with any other images.</p>
+
+<h5 id="references">references</h5>
+
+<ul>
+  <li><a href="http://www.cnblogs.com/asmer-stone/p/5530868.html">http://www.cnblogs.com/asmer-stone/p/5530868.html</a></li>
 </ul>
 
 				</span>

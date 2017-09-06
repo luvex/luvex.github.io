@@ -4,6 +4,7 @@ http://simpleyyt.github.io/about
 http://simpleyyt.github.io/archive
 http://simpleyyt.github.io/atom.xml
 http://simpleyyt.github.io/categories
+http://simpleyyt.github.io/hints
 http://simpleyyt.github.io/
 http://simpleyyt.github.io/rss.xml
 http://simpleyyt.github.io/search

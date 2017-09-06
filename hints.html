@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	
-	<title>Reread Computer System a programmer's perspective Chapter_2</title>
+	<title>Hints</title>
     
 	
 	<meta name="author" content="luvex">
@@ -90,7 +90,11 @@
 				
 				  
 					
-					<li id = "Hints"><a href="/hints">Hints</a></li>
+					<li  id = "Hints" class="active">
+					<span class="nav-l-active"></span>
+					<a href="/hints" class="active">Hints</a>
+					<span class="nav-r-active"></span>
+					</li>
 					
 				  
 				
@@ -142,147 +146,16 @@
 </nav>
 			<div id="page-content">
 				
-<div id="page-content">
-	<div class="cont932">
-	<div id="journal-articles-block">
-		<div class="journal-article">
-			<div class="journal-post-info">
-				<div class="journal-cat-box">
-				
-				
-				<div class="journal-cat-box">
-
-<a href="/categories.html#Reading-ref" title="Reading">
-	Reading
-
-</a>
+<div class="large-page-title">
+	<h1>Hints</h1>
 </div>
-				
-				</div>
-			</div>
-			<div class="journal-body">
-				<h1 class="journal-title">Reread Computer System a programmer's perspective Chapter_2<span class="author">by luvex</span>
-				</h1>
-				<span class="the-article">
-				<p>A review of rereading chapter 2–Representing and Manipulating Information.</p>
-
-<!--more-->
-
-<p>Contents of Chapter 1:</p>
-
-<ol>
-  <li>Information Storage</li>
-  <li>Integer Representations</li>
-  <li>Integer Arithmetic</li>
-  <li>Floating Point</li>
-  <li>Summary</li>
-</ol>
-
-<h2 id="information-storage">Information Storage</h2>
+<div id="terms-cont">
+	<p>Java</p>
 
 <ul>
-  <li>transfer among Binary, Decimal&amp;Hexadecimal</li>
-  <li>Every computer has a <strong>word size</strong>(representing virtual address 32bit/64bit)</li>
-  <li>Big endian or Little endian (should be noticed when data are communicated over a newwork)</li>
-  <li>
-    <p>swapping value
-&gt; 
-  void inplace_swap(int *x, int *y)	
-  {	
-    *y = *x ^ *y;	
-    *x = *x ^ *y;	
-    *y = *x ^ *y;
-  }	
-  //For an array with odd length, we must be careful with the middle element which could be set to 0 under such swapping</p>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>Boolean Algebra : &amp;</td>
-          <td>~ ^</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>Other Operations:
-    <ul>
-      <li>Mask Operation</li>
-      <li>
-        <table>
-          <tbody>
-            <tr>
-              <td>Logical Operation : ! &amp;&amp;</td>
-              <td> </td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-      <li>Shift Operations : « » (<a href="http://blog.sina.com.cn/s/blog_944790400101bsi8.html">The difference between logical&amp;arithmetic operations</a>)</li>
-    </ul>
-  </li>
-  <li>In this part, it mainly talks about bit-level calculation.</li>
+  <li>Calculate hamming distance by comparing bits: <code>Integer.bitCount(x ^ y)</code></li>
 </ul>
 
-<h2 id="integer-representations">Integer Representations</h2>
-
-<h2 id="integer-arithmetic">Integer Arithmetic</h2>
-
-<h2 id="floating-point">Floating Point</h2>
-
-<h2 id="summary">Summary</h2>
-
-				</span>
-				<div class="journal-date">Published 05 August 2015</div>
-				<div class="journal-tags">
-				
-				
-	 
-		<a class="tag-cont" href="/tags.html#Computer-ref">
-			<div class="tag-l"></div>
-			<div class="tag-c">Computer</div>
-			<div class="tag-r"></div>
-		</a>
-	 
-		<a class="tag-cont" href="/tags.html#System-ref">
-			<div class="tag-l"></div>
-			<div class="tag-c">System</div>
-			<div class="tag-r"></div>
-		</a>
-	
-
-
-
-				</div>
-			</div>
-		</div>
-		<div class="clearboth"></div>
-	</div>
-</div>
-	<div class="clearboth"></div>
-	
-
-
-  <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key=/reading/2015/08/05/Reread Computer Systems_2 data-title="Reread Computer System a programmer's perspective Chapter_2" data-url="http://iluvex.com//reading/2015/08/05/Reread-Computer-Systems_2"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"iluvex"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
-
-
-
-	<div class="clearboth"></div>
 </div>
 
 			</div>
@@ -376,7 +249,7 @@ var duoshuoQuery = {short_name:"iluvex"};
     
       
       	
-      	<li><a href="/hints">Hints</a></li>
+      	<li class="active"><a href="/hints" class="active">Hints</a></li>
       	
       
     

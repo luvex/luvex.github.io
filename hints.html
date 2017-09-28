@@ -156,7 +156,39 @@
   <li>Calculate hamming distance by comparing bits: <code>Integer.bitCount(x ^ y)</code></li>
   <li>Utilize <code>split()</code> to count appearance of characters, add <code>blank space</code> in the beginning and end of the <code>String</code> first</li>
   <li><code>string.replaceAll("regular expression","")</code></li>
+  <li>count prime numbers: <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Sieve of Eratosthees</a></li>
 </ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">int</span> <span class="nf">countPrimes_1</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span>
+<span class="o">{</span>
+	<span class="kt">boolean</span><span class="o">[]</span> <span class="n">isPrime</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">n</span><span class="o">];</span>
+	<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+		<span class="n">isPrime</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+	<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+	<span class="o">{</span>
+		<span class="k">if</span> <span class="o">(!</span><span class="n">isPrime</span><span class="o">[</span><span class="n">i</span><span class="o">])</span>
+			<span class="k">continue</span><span class="o">;</span>
+		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">j</span> <span class="o">+=</span> <span class="n">i</span><span class="o">)</span>
+			<span class="n">isPrime</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+	<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">isPrime</span><span class="o">[</span><span class="n">i</span><span class="o">])</span>
+			<span class="n">count</span><span class="o">++;</span>
+	<span class="k">return</span> <span class="n">count</span><span class="o">;</span>
+<span class="o">}</span></code></pre></figure>
+
+<ul>
+  <li>always consider boundary or overflow numbers</li>
+  <li>when we want to log the appearance of some characters, we can initialize an integer array with size 256, and since each char refers to a number, we can use char as index, and value as times of apperance.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">int</span><span class="o">[]</span> <span class="n">chars</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">256</span><span class="o">];</span>
+<span class="k">for</span><span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">s</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span>
+<span class="o">{</span>
+	<span class="n">chars</span><span class="o">[</span><span class="n">c</span><span class="o">]++;</span>
+<span class="o">}</span></code></pre></figure>
+
 
 </div>
 

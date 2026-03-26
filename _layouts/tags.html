@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<div class="page-title-inline">
+	<h1>{{ page.title }}</h1>
+</div>
+<div class="cont932">
+	<hr style="margin-top: 0;">
+	<div class="contentarea">
+		<div class="ca-center ca-center20t nobg">
+			<div class="journal-tags" id="teaminfo">
+				{% assign sorted_tags = site.tags | sort %}
+				{% for tag in sorted_tags %}
+				<a class="tag-cont" href="#{{ tag[0] | slugify }}-ref">
+					<div class="tag-l"></div>
+					<div class="tag-c">{{ tag[0] }}</div>
+					<div class="tag-r"></div>
+				</a>
+				{% endfor %}
+			</div>
+			<div class="clearboth"></div>
+			<hr>
+			<div>
+				{% assign sorted_tags = site.tags | sort %}
+				{% for tag in sorted_tags %}
+				<div class="team-member">
+					<h2 id="{{ tag[0] | slugify }}-ref">{{ tag[0] }}</h2>
+					<ul>
+						{% for post in tag[1] %}
+						<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+				{% endfor %}
+			</div>
+			<div class="clearboth"></div>
+		</div>
+	</div>
+	<div class="clearboth"></div>
+</div>
+<div class="clearboth"></div>

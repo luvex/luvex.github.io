@@ -158,10 +158,10 @@
       .attr('width', '100%')
       .style('display', 'block');
 
-    /* Ocean */
+    /* Ocean — slightly cooler than bg for contrast */
     svg.append('rect')
       .attr('width', w).attr('height', h)
-      .attr('fill', 'var(--bg)');
+      .attr('fill', '#e8e3d8');
 
     /* Countries */
     svg.selectAll('.country')

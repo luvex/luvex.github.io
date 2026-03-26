@@ -1,5 +1,5 @@
-title: CoderX
-description: luvex's Blog
+title: Latent Space
+description: "the space between human and machine"
 url: "https://www.iluvex.com"
 baseurl: ""
 
@@ -23,7 +23,7 @@ kramdown:
 excerpt_separator: <!--more-->
 
 # Pagination
-paginate: 5
+paginate: 6
 paginate_path: "/:num"
 
 # Plugins
@@ -41,16 +41,36 @@ collections:
 
 # Navigation
 nav_pages:
-  - title: About Me
+  - title: AI Zone
+    url: /ai
+    gradient: ai
+  - title: Travel
+    url: /travel
+    gradient: travel
+  - title: Thoughts
+    url: /thoughts
+    gradient: thoughts
+  - title: About
     url: /about
-  - title: Archive
-    url: /archive
-  - title: Categories
-    url: /categories
-  - title: Hints
-    url: /hints
-  - title: Tags
-    url: /tags
+    gradient: profile
+
+# Section metadata (used by layouts)
+sections:
+  ai:
+    title: AI Zone
+    emoji: "🤖"
+    tagline: "Learning in the age of intelligence"
+    gradient: ai
+  travel:
+    title: Travel
+    emoji: "✈️"
+    tagline: "Adventures across the world"
+    gradient: travel
+  thoughts:
+    title: Thoughts
+    emoji: "💭"
+    tagline: "Reflections on life, technology, and the world"
+    gradient: thoughts
 
 # Exclude from build
 exclude:

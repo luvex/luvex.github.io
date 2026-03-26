@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<!-- Hero -->
+<div class="section-hero" data-gradient="travel">
+  <div class="section-hero-emoji">✈️</div>
+  <h1>Travel</h1>
+  <p>Adventures across the world</p>
+</div>
+
+<div class="section-content">
+  {% assign travel_posts = site.posts | where: "published", true | where_exp: "p", "p.categories contains 'travel'" %}
+
+  {% if travel_posts.size == 0 %}
+    <div class="travel-placeholder">
+      <div class="placeholder-icon">📷</div>
+      <h2>Adventures loading...</h2>
+      <p>Photos and stories from around the world are on their way. Check back soon.</p>
+    </div>
+  {% else %}
+    <div class="post-list">
+      {% for post in travel_posts %}
+        <a href="{{ post.url | relative_url }}" class="post-list-card">
+          <div class="post-list-card-date">{{ post.date | date: "%B %d, %Y" }}</div>
+          <div class="post-list-card-title">{{ post.title }}</div>
+          {% if post.excerpt %}
+            <div class="post-list-card-excerpt">{{ post.excerpt | strip_html }}</div>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <!-- Photo grid placeholder -->
+  <div class="photo-grid" id="photo-grid"></div>
+
+  {{ content }}
+</div>

@@ -1,45 +1,57 @@
 ---
 layout: default
 ---
-<div class="page-title-inline">
-	<h1>{{ site.title }} </h1>
-	<h2>{{ site.description }}</h2>
-</div>
-<div class="cont932">
-	<hr style="margin-top: 0;">
-	<div id="journal-articles-block">
-		{% for post in paginator.posts %}
-		<div class="journal-article">
-			<div class="journal-post-info">
-				{% if post.categories.size > 0 %}
-				<div class="journal-cat-box">
-					<a href="/categories#{{ post.categories[0] | slugify }}-ref" title="{{ post.categories[0] }}">
-						{{ post.categories[0] }}
-					</a>
-				</div>
-				{% endif %}
-			</div>
-			<div class="journal-body">
-				<h1 class="journal-title">
-					<a href="{{ post.url }}">{{ post.title }}</a>
-					<span class="author">by {{ site.author.name }}</span>
-				</h1>
-				<span class="teaser">{{ post.excerpt }}</span>
-				<span class="readmore"><a href="{{ post.url }}">Read More</a></span>
-			</div>
-		</div>
-		<div class="clearboth"></div>
-		{% endfor %}
-	</div>
+<!-- Hero -->
+<section class="home-hero">
+  <h1>{{ site.title }}</h1>
+  <p>{{ site.description }}</p>
+</section>
 
-	<div id="journal-arrows-cont">
-		{% if paginator.next_page %}
-			<a href="{{ paginator.next_page_path }}" class="journal-arrow ja-forward"></a>
-		{% endif %}
-	</div>
-
-	<div class="clearboth"></div>
-	<div id="journal-loadmore">Load More&hellip;</div>
-	<div class="clearboth"></div>
+<!-- Section tiles -->
+<div class="section-tiles">
+  {% for item in site.nav_pages %}
+    {% assign section = site.sections[item.gradient] %}
+    <a href="{{ item.url | relative_url }}" class="section-tile" data-gradient="{{ item.gradient }}">
+      {% if section %}
+        <div class="tile-emoji">{{ section.emoji }}</div>
+        <div class="tile-title">{{ section.title }}</div>
+        <div class="tile-tagline">{{ section.tagline }}</div>
+      {% else %}
+        <div class="tile-title">{{ item.title }}</div>
+      {% endif %}
+    </a>
+  {% endfor %}
 </div>
-<div class="clearboth"></div>
+
+<!-- Recent posts feed -->
+<div class="home-feed">
+  {% assign recent_posts = site.posts | where: "published", true | limit: 6 %}
+  {% if recent_posts.size > 0 %}
+    <h2 class="feed-heading">Recently</h2>
+    <div class="feed-list">
+      {% for post in recent_posts %}
+        {% assign cat = post.categories[0] %}
+        {% assign gradient = "default" %}
+        {% if cat == "ai" %}{% assign gradient = "ai" %}{% endif %}
+        {% if cat == "travel" %}{% assign gradient = "travel" %}{% endif %}
+        {% if cat == "thoughts" %}{% assign gradient = "thoughts" %}{% endif %}
+        <a href="{{ post.url | relative_url }}" class="feed-card">
+          <div class="feed-card-meta">
+            {% if cat %}
+              <span class="feed-badge" data-gradient="{{ gradient }}">{{ cat }}</span>
+            {% endif %}
+            <span class="feed-date">{{ post.date | date: "%b %d, %Y" }}</span>
+          </div>
+          <div class="feed-title">{{ post.title }}</div>
+          {% if post.excerpt %}
+            <div class="feed-excerpt">{{ post.excerpt | strip_html }}</div>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="empty-state">
+      <p>No posts yet — check back soon.</p>
+    </div>
+  {% endif %}
+</div>

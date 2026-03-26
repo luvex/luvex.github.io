@@ -1,56 +1,37 @@
-<footer>
-	<div class="footer-940">
-		<div class="footer-general-info">
-			&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}.<br><br>
-			Content licensed under:<br>
-			<a class="cc" href="http://creativecommons.org/licenses/by-sa/3.0/">c a b</a><br>
-			<a href="/about">About Me</a><br>
-		</div>
-		<div class="footer-col-cont">
-			<div class="footer-nav-col">
-				<h4><a>Categories</a></h4>
-				<ul>
-					{% assign sorted_cats = site.categories | sort %}
-					{% for cat in sorted_cats %}
-						<li><a href="/categories#{{ cat[0] | slugify }}-ref">
-							{{ cat[0] }} <span>{{ cat[1].size }}</span>
-						</a></li>
-					{% endfor %}
-				</ul>
-			</div>
-			<div class="footer-nav-col">
-				<h4><a>Pages</a></h4>
-				<ul>
-					{% for item in site.nav_pages %}
-						<li{% if page.url == item.url or page.url == item.url | append: '/' %} class="active"{% endif %}>
-							<a href="{{ item.url }}"{% if page.url == item.url or page.url == item.url | append: '/' %} class="active"{% endif %}>{{ item.title }}</a>
-						</li>
-					{% endfor %}
-				</ul>
-			</div>
-			<div class="footer-nav-col">
-				<h4><a>Feed</a></h4>
-				<ul>
-					<li><a href="/feed.xml">Atom Feed</a></li>
-				</ul>
-			</div>
-			<div class="footer-nav-col">
-				<h4><a>Links</a></h4>
-				<ul>
-					<li><a href="https://github.com/{{ site.author.github }}">{{ site.author.github }}'s Blog</a></li>
-				</ul>
-			</div>
-			<div class="footer-nav-col">
-				<h4><a href="/about">About Me</a></h4>
-				<ul>
-					<li><a href="mailto:{{ site.author.email }}">e-mail</a></li>
-					<li><a href="https://github.com/{{ site.author.github }}">Github</a></li>
-					<li><a href="{{ site.author.weibo }}">WeiBo</a></li>
-				</ul>
-			</div>
-			<div class="clearboth"></div>
-		</div>
-		<div class="clearboth"></div>
-	</div>
-	<div class="clearboth"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-col-title">Sections</div>
+      <ul class="footer-links">
+        {% for item in site.nav_pages %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {% endfor %}
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Subscribe</div>
+      <ul class="footer-links">
+        <li><a href="{{ '/feed.xml' | relative_url }}">Atom Feed</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <ul class="footer-links">
+        {% if site.author.github %}
+          <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a></li>
+        {% endif %}
+        {% if site.author.weibo %}
+          <li><a href="{{ site.author.weibo }}" target="_blank" rel="noopener">Weibo</a></li>
+        {% endif %}
+        {% if site.author.email %}
+          <li><a href="mailto:{{ site.author.email }}">Email</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. All rights reserved.</span>
+    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+  </div>
 </footer>

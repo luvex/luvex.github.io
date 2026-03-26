@@ -1,39 +1,49 @@
 ---
 layout: default
 ---
-<div id="page-content">
-	<div class="cont932">
-		<div id="journal-articles-block">
-			<div class="journal-article">
-				<div class="journal-post-info">
-					<div class="journal-cat-box">
-						{% for cat in page.categories %}
-						<div class="journal-cat-box">
-							<a href="/categories#{{ cat | slugify }}-ref" title="{{ cat }}">{{ cat }}</a>
-						</div>
-						{% endfor %}
-					</div>
-				</div>
-				<div class="journal-body">
-					<h1 class="journal-title">{{ page.title }}<span class="author">by {{ site.author.name }}</span></h1>
-					<span class="the-article">
-						{{ content }}
-					</span>
-					<div class="journal-date">Published {{ page.date | date: "%d %B %Y" }}</div>
-					<div class="journal-tags">
-						{% for tag in page.tags %}
-						<a class="tag-cont" href="/tags#{{ tag | slugify }}-ref">
-							<div class="tag-l"></div>
-							<div class="tag-c">{{ tag }}</div>
-							<div class="tag-r"></div>
-						</a>
-						{% endfor %}
-					</div>
-				</div>
-			</div>
-			<div class="clearboth"></div>
-		</div>
-	</div>
-	<div class="clearboth"></div>
-</div>
-<div class="clearboth"></div>
+{% assign cat = page.categories[0] %}
+{% assign gradient = "default" %}
+{% if cat == "ai" %}{% assign gradient = "ai" %}{% endif %}
+{% if cat == "travel" %}{% assign gradient = "travel" %}{% endif %}
+{% if cat == "thoughts" %}{% assign gradient = "thoughts" %}{% endif %}
+
+{% assign is_til = false %}
+{% if page.post_type == "til" %}{% assign is_til = true %}{% endif %}
+
+{% if is_til %}
+  <!-- TIL compact header -->
+  <div class="post-til-header">
+    <div class="til-badge">TIL</div>
+    <h1>{{ page.title }}</h1>
+    <div class="post-meta">
+      <span>{{ page.date | date: "%B %d, %Y" }}</span>
+      {% if cat %}<span>&middot; {{ cat }}</span>{% endif %}
+    </div>
+  </div>
+{% else %}
+  <!-- Full gradient header band -->
+  <div class="post-header-band" data-gradient="{{ gradient }}">
+    <div class="post-header-inner">
+      {% if cat %}
+        <div class="post-category-badge">{{ cat }}</div>
+      {% endif %}
+      <h1>{{ page.title }}</h1>
+      <div class="post-meta">
+        <span>{{ page.date | date: "%B %d, %Y" }}</span>
+        <span>&middot; by {{ site.author.name }}</span>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% if page.tags.size > 0 %}
+  <div class="post-tags">
+    {% for tag in page.tags %}
+      <span class="post-tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<article class="post-body">
+  {{ content }}
+</article>

@@ -15,35 +15,35 @@
      the topojson has them as separate features.
   ----------------------------------------------------------- */
   var VISITED = {
-    "156": { name: "China",               cities: ["Beijing", "Shanghai", "Changchun", "Tianjin"] },
-    "392": { name: "Japan",               cities: ["Tokyo", "Osaka"] },
-    "410": { name: "South Korea",         cities: ["Seoul"] },
-    "408": { name: "North Korea",         cities: ["Pyongyang"] },
-    "344": { name: "Hong Kong",           cities: [] },
-    "158": { name: "Taiwan",              cities: ["Taipei", "Kaohsiung", "Taichung"] },
-    "356": { name: "India",               cities: ["Bangalore"] },
-    "764": { name: "Thailand",            cities: ["Bangkok", "Phuket"] },
-    "458": { name: "Malaysia",            cities: ["Kuala Lumpur"] },
-    "702": { name: "Singapore",           cities: [] },
-    "784": { name: "United Arab Emirates",cities: ["Dubai", "Abu Dhabi"] },
-    "634": { name: "Qatar",               cities: [] },
-    "818": { name: "Egypt",               cities: ["Cairo", "Hurghada"] },
-    "528": { name: "Netherlands",         cities: [] },
-    "056": { name: "Belgium",             cities: [] },
-    "442": { name: "Luxembourg",          cities: [] },
-    "250": { name: "France",              cities: [] },
-    "724": { name: "Spain",               cities: [] },
-    "492": { name: "Monaco",              cities: [] },
-    "380": { name: "Italy",               cities: [] },
-    "756": { name: "Switzerland",         cities: [] },
-    "276": { name: "Germany",             cities: [] },
-    "578": { name: "Norway",              cities: [] },
-    "752": { name: "Sweden",              cities: [] },
-    "246": { name: "Finland",             cities: [] },
-    "643": { name: "Russia",              cities: [] },
-    "840": { name: "United States",       cities: [] },
-    "604": { name: "Peru",                cities: [] },
-    "152": { name: "Chile",               cities: [] }
+    "156": { name: "China",                cities: ["Beijing", "Shanghai", "Changchun", "Tianjin", "Shenyang", "Baishan", "Dalian", "Dandong", "Shijiazhuang", "Zhengzhou", "Nanchang", "Kunming", "Dali", "Lijiang", "Mile", "Chengdu", "Nanjing", "Suzhou", "Changzhou", "Wuxi", "Hangzhou", "Lishui", "Quzhou", "Chuzhou", "Guangzhou", "Shenzhen", "Shantou", "Jieyang"] },
+    "392": { name: "Japan",                cities: ["Tokyo", "Osaka"] },
+    "410": { name: "South Korea",          cities: ["Seoul"] },
+    "408": { name: "North Korea",          cities: ["Pyongyang"] },
+    "344": { name: "Hong Kong",            cities: ["Hong Kong"] },
+    "158": { name: "Taiwan",               cities: ["Taipei", "Kaohsiung", "Taichung"] },
+    "356": { name: "India",                cities: ["Bangalore"] },
+    "764": { name: "Thailand",             cities: ["Bangkok", "Phuket"] },
+    "458": { name: "Malaysia",             cities: ["Kuala Lumpur", "Malacca"] },
+    "702": { name: "Singapore",            cities: ["Singapore City"] },
+    "784": { name: "United Arab Emirates", cities: ["Dubai", "Abu Dhabi"] },
+    "634": { name: "Qatar",                cities: ["Doha"] },
+    "818": { name: "Egypt",                cities: ["Cairo", "Hurghada", "Luxor", "Aswan"] },
+    "528": { name: "Netherlands",          cities: ["Amsterdam", "Eindhoven", "Rotterdam", "The Hague"] },
+    "056": { name: "Belgium",              cities: ["Brussels", "Ghent", "Antwerp"] },
+    "442": { name: "Luxembourg",           cities: ["Luxembourg City"] },
+    "250": { name: "France",               cities: ["Paris", "Nice", "Cannes", "Marseille", "Lyon", "Rennes", "Corsica"] },
+    "724": { name: "Spain",                cities: ["Barcelona"] },
+    "492": { name: "Monaco",               cities: ["Monaco City"] },
+    "380": { name: "Italy",                cities: ["Milan", "Rome", "Pisa", "Naples", "Capri", "Florence"] },
+    "756": { name: "Switzerland",          cities: ["Zurich", "Geneva", "Lucerne", "Lausanne"] },
+    "276": { name: "Germany",              cities: ["Berlin", "Frankfurt", "Munich", "Cologne"] },
+    "578": { name: "Norway",               cities: ["Oslo", "Tromsø", "Svalbard"] },
+    "752": { name: "Sweden",               cities: ["Stockholm"] },
+    "246": { name: "Finland",              cities: ["Helsinki"] },
+    "643": { name: "Russia",               cities: ["Moscow", "St. Petersburg", "Murmansk"] },
+    "840": { name: "United States",        cities: ["Los Angeles", "San Francisco", "Las Vegas", "Boston", "Washington D.C.", "New York"] },
+    "604": { name: "Peru",                 cities: ["Lima", "Cusco"] },
+    "152": { name: "Chile",                cities: ["Santiago", "Easter Island"] }
   };
 
   /* -----------------------------------------------------------
@@ -57,7 +57,7 @@
     var el = document.getElementById('map-stats');
     if (el) {
       el.innerHTML =
-        '<span><strong>' + cc + '</strong> ' + (cc === 1 ? 'country' : 'countries') + '</span>' +
+        '<span><strong>' + cc + '</strong> ' + (cc === 1 ? 'country / district' : 'countries & districts') + '</span>' +
         '<span><strong>' + cityCount + '</strong> cities</span>';
     }
     renderSummary();

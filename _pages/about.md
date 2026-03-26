@@ -6,11 +6,17 @@ permalink: /about
 
 ## About
 
-Software engineer and data scientist, currently working as an Investment Engineer at Bridgewater Associates. I build systems at the intersection of data, markets, and software — where precision matters and abstraction is either your best friend or your worst enemy.
+I'm an optimistic pessimist. I'm not entirely sure what that means yet, but it feels accurate.
 
-I graduated from [Nankai University](http://www.nankai.edu.cn) with a BE in Software Engineering, then went through the [EIT Digital Master School](https://www.masterschool.eitdigital.eu) — split between [Eindhoven University of Technology](https://www.tue.nl) and [Université Côte d'Azur](https://univ-cotedazur.eu).
+In the AI era, I find myself holding tighter to things I'm not sure are worth keeping, and loosening my grip on things I'm not sure I should lose. The destination is unclear. But I keep moving forward — that's the optimistic part. The pessimistic part is that I suspect moving forward and making progress might be two very different things.
 
-This blog is my notebook. No algorithm decides what goes here.
+By day I work on systems at the intersection of data and markets at Bridgewater Associates. I've also built data pipelines at DiDi, shipped features at Wish, and interned at ING and Thomson Reuters. Somewhere along the way I got a degree in Software Engineering from [Nankai University](http://www.nankai.edu.cn) and an MSc through the [EIT Digital Master School](https://www.masterschool.eitdigital.eu) — split between Eindhoven and the south of France.
+
+I've been to 29 countries and countless cities. I still don't know what home feels like.
+
+This blog is where I think out loud. No algorithm curates it. No audience shapes it. Just me, trying to make sense of a world that's changing faster than I can follow.
+
+---
 
 ## Experience
 
@@ -52,6 +58,8 @@ This blog is my notebook. No algorithm decides what goes here.
   </li>
 </ul>
 
+---
+
 ## Education
 
 <ul class="timeline">
@@ -70,6 +78,8 @@ This blog is my notebook. No algorithm decides what goes here.
     </div>
   </li>
 </ul>
+
+---
 
 ## Stack
 

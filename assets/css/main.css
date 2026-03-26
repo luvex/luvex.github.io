@@ -1,42 +1,43 @@
 /* ============================================================
    Latent Space — main.css
-   Design system: Nordic Minimalist
+   Design system: Birch & Frost (Nordic Minimalist — warm light)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* ============================================================
    CSS Custom Properties
    ============================================================ */
 :root {
-  /* Monochromatic dark palette — cold, post-AI */
-  --bg:           #0d1117;
-  --surface:      #161b22;
-  --surface-2:    #1c2128;
-  --border:       #30363d;
-  --border-subtle:#21262d;
+  /* Birch & Frost — warm parchment base, cold accent */
+  --bg:           #f5f0e8;   /* birch bark parchment */
+  --surface:      #fdfcf8;   /* near-white */
+  --surface-2:    #ece7de;   /* inset warm */
+  --border:       #ddd5c6;
+  --border-subtle:#e8e2d9;
 
-  --text:         #e6edf3;
-  --text-2:       #8b949e;
-  --text-3:       #484f58;
+  --text:         #1a1714;   /* warm near-black, dried ink */
+  --text-2:       #6d6560;   /* warm medium gray */
+  --text-3:       #b0aaa2;   /* very muted */
 
-  --accent:       #58a6ff;   /* single cold-blue accent, used sparingly */
-  --accent-dim:   rgba(88, 166, 255, 0.12);
+  --accent:       #3d6e7e;   /* steel-lake blue — single cold accent */
+  --accent-dim:   rgba(61, 110, 126, 0.08);
 
-  /* Section accents — all cold, barely distinguishable */
-  --col-ai:       #6e9ae0;
-  --col-travel:   #5ab4c0;
-  --col-thoughts: #8d8fa8;
-  --col-profile:  #6eada0;
+  /* Section micro-accents — muted, atmospheric */
+  --col-ai:       #4e7090;   /* slate blue */
+  --col-travel:   #3d7265;   /* cold teal */
+  --col-thoughts: #7a6250;   /* warm umber */
+  --col-profile:  #5a7050;   /* lichen moss */
 
   /* Typography */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-mono:  'JetBrains Mono', monospace;
 
   /* Layout */
   --max-width: 1100px;
-  --radius:    6px;
-  --radius-lg: 10px;
+  --radius:    4px;
+  --radius-lg: 8px;
 }
 
 /* ============================================================
@@ -172,10 +173,11 @@ ul, ol { padding-left: 1.5em; }
 }
 
 .home-hero h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 6vw, 4rem);
   font-weight: 300;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
   color: var(--text);
   margin-bottom: 0.75rem;
 }
@@ -340,10 +342,11 @@ ul, ol { padding-left: 1.5em; }
 .section-hero[data-gradient="profile"]  .section-hero-label { color: var(--col-profile); }
 
 .section-hero h1 {
-  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 300;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
+  letter-spacing: 0;
+  line-height: 1.1;
   color: var(--text);
   margin-bottom: 0.5rem;
 }
@@ -490,19 +493,21 @@ ul, ol { padding-left: 1.5em; }
 
 .world-map-container svg .country {
   fill: var(--surface-2);
-  stroke: var(--border-subtle);
-  stroke-width: 0.3px;
+  stroke: var(--border);
+  stroke-width: 0.4px;
   cursor: default;
-  transition: fill .12s;
+  transition: fill .15s;
 }
 
 .world-map-container svg .country.visited {
   fill: var(--col-travel);
+  opacity: 0.85;
   cursor: crosshair;
 }
 
 .world-map-container svg .country.visited:hover {
   fill: var(--accent);
+  opacity: 1;
 }
 
 .map-stats {
@@ -755,10 +760,11 @@ ul, ol { padding-left: 1.5em; }
 .post-header-band[data-gradient="default"]  .post-category-badge { color: var(--text-3); }
 
 .post-header-band h1 {
-  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 300;
-  letter-spacing: -0.03em;
-  line-height: 1.25;
+  letter-spacing: 0;
+  line-height: 1.2;
   color: var(--text);
   margin-bottom: 1rem;
 }
@@ -779,9 +785,10 @@ ul, ol { padding-left: 1.5em; }
 }
 
 .post-til-header h1 {
-  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
   font-weight: 300;
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
   color: var(--text);
   margin-bottom: 0.5rem;
 }
@@ -835,14 +842,14 @@ ul, ol { padding-left: 1.5em; }
   border: 1px solid var(--border);
   border-radius: 3px;
   padding: 0.12em 0.4em;
-  color: var(--col-ai);
+  color: #953800;
 }
 
 .post-body pre { margin: 1.5rem 0; border-radius: var(--radius); overflow-x: auto; }
 .post-body pre code { background: none; border: none; padding: 0; color: inherit; font-size: 0.85rem; }
 
-.highlight { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
-.highlight pre { margin: 0; padding: 1.25em; overflow: auto; font-size: 0.85rem; line-height: 1.65; font-family: var(--font-mono); color: var(--text-2); }
+.highlight { background: #f6f8fa; border: 1px solid var(--border); border-radius: var(--radius); }
+.highlight pre { margin: 0; padding: 1.25em; overflow: auto; font-size: 0.85rem; line-height: 1.65; font-family: var(--font-mono); color: #24292f; }
 
 /* Post footer */
 .post-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0 1.5rem 0; max-width: 720px; margin: 0 auto; }
@@ -930,48 +937,48 @@ ul, ol { padding-left: 1.5em; }
 .empty-state { text-align: center; padding: 4rem 1.5rem; color: var(--text-3); font-size: 0.85rem; font-family: var(--font-mono); }
 
 /* ============================================================
-   Syntax highlighting — cold monochrome (adjusted for dark bg)
+   Syntax highlighting — GitHub Light (warm bg variant)
    ============================================================ */
-.highlight .hll { background: #2a303a; }
-.highlight .c  { color: #484f58; font-style: italic; }
-.highlight .err { color: #ffa198; }
-.highlight .k  { color: #ff7b72; }
-.highlight .o  { color: #8b949e; }
-.highlight .cm { color: #484f58; font-style: italic; }
-.highlight .cp { color: #8b949e; }
-.highlight .c1 { color: #484f58; font-style: italic; }
-.highlight .cs { color: #484f58; font-style: italic; }
-.highlight .gd { color: #ffa198; }
+.highlight .hll { background: #fffbdd; }
+.highlight .c  { color: #6e7781; font-style: italic; }
+.highlight .err { color: #cf222e; }
+.highlight .k  { color: #cf222e; font-weight: bold; }
+.highlight .o  { color: #24292f; }
+.highlight .cm { color: #6e7781; font-style: italic; }
+.highlight .cp { color: #6e7781; }
+.highlight .c1 { color: #6e7781; font-style: italic; }
+.highlight .cs { color: #6e7781; font-style: italic; }
+.highlight .gd { color: #82071e; background: #ffebe9; }
 .highlight .ge { font-style: italic; }
 .highlight .gs { font-weight: bold; }
-.highlight .gi { color: #7ee787; }
-.highlight .kc { color: #79c0ff; }
-.highlight .kd { color: #ff7b72; }
-.highlight .kn { color: #ff7b72; }
-.highlight .kp { color: #79c0ff; }
-.highlight .kr { color: #ff7b72; }
-.highlight .kt { color: #79c0ff; }
-.highlight .m  { color: #79c0ff; }
-.highlight .s  { color: #a5d6ff; }
-.highlight .na { color: #7ee787; }
-.highlight .nb { color: #79c0ff; }
-.highlight .nc { color: #f0883e; font-weight: bold; }
-.highlight .no { color: #79c0ff; }
-.highlight .nd { color: #d2a8ff; }
-.highlight .ni { color: #e6edf3; }
-.highlight .ne { color: #f0883e; font-weight: bold; }
-.highlight .nf { color: #d2a8ff; }
-.highlight .nl { color: #79c0ff; }
-.highlight .nn { color: #f0883e; }
-.highlight .nt { color: #7ee787; }
-.highlight .nv { color: #e6edf3; }
-.highlight .ow { color: #ff7b72; }
-.highlight .w  { color: #e6edf3; }
-.highlight .mi { color: #79c0ff; }
-.highlight .mf { color: #79c0ff; }
-.highlight .s1 { color: #a5d6ff; }
-.highlight .s2 { color: #a5d6ff; }
-.highlight .se { color: #79c0ff; }
-.highlight .ss { color: #a5d6ff; }
-.highlight .sr { color: #a5d6ff; }
-.highlight .bp { color: #79c0ff; }
+.highlight .gi { color: #116329; background: #dafbe1; }
+.highlight .kc { color: #0550ae; }
+.highlight .kd { color: #cf222e; }
+.highlight .kn { color: #cf222e; }
+.highlight .kp { color: #0550ae; }
+.highlight .kr { color: #cf222e; }
+.highlight .kt { color: #0550ae; }
+.highlight .m  { color: #0550ae; }
+.highlight .s  { color: #0a3069; }
+.highlight .na { color: #116329; }
+.highlight .nb { color: #0550ae; }
+.highlight .nc { color: #953800; font-weight: bold; }
+.highlight .no { color: #0550ae; }
+.highlight .nd { color: #8250df; }
+.highlight .ni { color: #24292f; }
+.highlight .ne { color: #953800; font-weight: bold; }
+.highlight .nf { color: #8250df; }
+.highlight .nl { color: #0550ae; }
+.highlight .nn { color: #953800; }
+.highlight .nt { color: #116329; }
+.highlight .nv { color: #24292f; }
+.highlight .ow { color: #cf222e; }
+.highlight .w  { color: #24292f; }
+.highlight .mi { color: #0550ae; }
+.highlight .mf { color: #0550ae; }
+.highlight .s1 { color: #0a3069; }
+.highlight .s2 { color: #0a3069; }
+.highlight .se { color: #0550ae; }
+.highlight .ss { color: #0a3069; }
+.highlight .sr { color: #0a3069; }
+.highlight .bp { color: #0550ae; }

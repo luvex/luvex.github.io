@@ -39,13 +39,6 @@ This blog is my notebook. No algorithm decides what goes here.
   <li>
     <div class="timeline-dot"></div>
     <div class="timeline-content">
-      <strong>Product Manager — Dalian Futures IT</strong>
-      <span>Financial technology</span>
-    </div>
-  </li>
-  <li>
-    <div class="timeline-dot"></div>
-    <div class="timeline-content">
       <strong>Intern — ING Group</strong>
       <span>Banking operations · Netherlands</span>
     </div>

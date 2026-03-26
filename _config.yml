@@ -1,0 +1,61 @@
+title: CoderX
+description: luvex's Blog
+url: "https://www.iluvex.com"
+baseurl: ""
+
+author:
+  name: luvex
+  email: maxin_kevin@hotmail.com
+  github: luvex
+  weibo: "http://www.weibo.com/u/1609515304"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+
+# Excerpt separator
+excerpt_separator: <!--more-->
+
+# Pagination
+paginate: 5
+paginate_path: "/:num"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name
+
+# Navigation
+nav_pages:
+  - title: About Me
+    url: /about
+  - title: Archive
+    url: /archive
+  - title: Categories
+    url: /categories
+  - title: Hints
+    url: /hints
+  - title: Tags
+    url: /tags
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - vendor
+  - README.md

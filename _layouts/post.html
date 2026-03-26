@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<div id="page-content">
+	<div class="cont932">
+		<div id="journal-articles-block">
+			<div class="journal-article">
+				<div class="journal-post-info">
+					<div class="journal-cat-box">
+						{% for cat in page.categories %}
+						<div class="journal-cat-box">
+							<a href="/categories#{{ cat | slugify }}-ref" title="{{ cat }}">{{ cat }}</a>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="journal-body">
+					<h1 class="journal-title">{{ page.title }}<span class="author">by {{ site.author.name }}</span></h1>
+					<span class="the-article">
+						{{ content }}
+					</span>
+					<div class="journal-date">Published {{ page.date | date: "%d %B %Y" }}</div>
+					<div class="journal-tags">
+						{% for tag in page.tags %}
+						<a class="tag-cont" href="/tags#{{ tag | slugify }}-ref">
+							<div class="tag-l"></div>
+							<div class="tag-c">{{ tag }}</div>
+							<div class="tag-r"></div>
+						</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="clearboth"></div>
+		</div>
+	</div>
+	<div class="clearboth"></div>
+</div>
+<div class="clearboth"></div>

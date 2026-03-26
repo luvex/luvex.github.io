@@ -23,6 +23,8 @@
     "158": { name: "Taiwan",               cities: ["Taipei", "Kaohsiung", "Taichung"] },
     "356": { name: "India",                cities: ["Bangalore"] },
     "764": { name: "Thailand",             cities: ["Bangkok", "Phuket"] },
+    "704": { name: "Vietnam",              cities: ["Ho Chi Minh City"] },
+    "116": { name: "Cambodia",             cities: ["Phnom Penh"] },
     "458": { name: "Malaysia",             cities: ["Kuala Lumpur", "Malacca"] },
     "702": { name: "Singapore",            cities: ["Singapore City"] },
     "784": { name: "United Arab Emirates", cities: ["Dubai", "Abu Dhabi"] },

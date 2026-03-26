@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Am I Worth $250 a Month?"
-date: 2026-03-26 23:00:00 +0800
+date: 2026-03-26 00:00:00 +0000
 categories: [thoughts]
 tags: [AI, Life, Reflection]
 published: true

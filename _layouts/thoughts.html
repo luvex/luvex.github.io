@@ -10,7 +10,7 @@ layout: default
 </div>
 
 <div class="section-content">
-  {% assign thought_posts = site.posts | where: "published", true | where_exp: "p", "p.categories contains 'thoughts'" %}
+  {% assign thought_posts = site.posts | where_exp: "p", "p.published != false and p.categories contains 'thoughts'" %}
 
   {% if thought_posts.size > 0 %}
     <div class="thoughts-list">

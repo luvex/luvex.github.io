@@ -12,7 +12,7 @@ In the AI era, I find myself holding tighter to things I'm not sure are worth ke
 
 By day I work on systems at the intersection of data and markets at Bridgewater Associates. I've also built data pipelines at DiDi, shipped features at Wish, and interned at ING and Thomson Reuters. Somewhere along the way I got a degree in Software Engineering from [Nankai University](http://www.nankai.edu.cn) and an MSc through the [EIT Digital Master School](https://www.masterschool.eitdigital.eu) — split between Eindhoven and the south of France.
 
-I've been to 29 countries and countless cities. I still don't know what home feels like.
+I've been to 31 countries and districts, and more cities than I can remember. I still don't know what home feels like.
 
 This blog is where I think out loud. No algorithm curates it. No audience shapes it. Just me, trying to make sense of a world that's changing faster than I can follow.
 

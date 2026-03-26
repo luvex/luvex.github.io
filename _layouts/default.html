@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	{% include head.html %}
+  {% include head.html %}
 </head>
 <body>
-	<noscript>
-		<div id="no-js">Please enable JavaScript in your browser to experience this site fully.</div>
-	</noscript>
-	<div id="page-container">
-		<div>
-			{% include nav.html %}
-			<div id="page-content">
-				{{ content }}
-			</div>
-			<div class="clearboth pagebottom"></div>
-		</div>
-	</div>
-	{% include footer.html %}
+  {% include nav.html %}
+  <main>
+    {{ content }}
+  </main>
+  {% include footer.html %}
 </body>
 </html>

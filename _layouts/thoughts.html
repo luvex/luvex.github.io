@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<!-- Hero -->
+<div class="section-hero" data-gradient="thoughts">
+  <div class="section-hero-emoji">💭</div>
+  <h1>Thoughts</h1>
+  <p>Reflections on life, technology, and the world</p>
+</div>
+
+<div class="section-content">
+  {% assign thought_posts = site.posts | where: "published", true | where_exp: "p", "p.categories contains 'thoughts'" %}
+
+  {% if thought_posts.size > 0 %}
+    <div class="thoughts-list">
+      {% for post in thought_posts %}
+        <a href="{{ post.url | relative_url }}" class="thought-card">
+          <div class="thought-card-date">{{ post.date | date: "%B %d, %Y" }}</div>
+          <div class="thought-card-title">{{ post.title }}</div>
+          {% if post.excerpt %}
+            <div class="thought-card-excerpt">{{ post.excerpt | strip_html }}</div>
+          {% endif %}
+          <span class="read-more">Read more &rarr;</span>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="empty-state">
+      <p>No thoughts posted yet. Writing in progress...</p>
+    </div>
+  {% endif %}
+
+  {{ content }}
+</div>

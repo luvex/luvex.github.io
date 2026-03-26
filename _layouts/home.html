@@ -26,7 +26,7 @@ layout: default
 
 <!-- Recent posts feed -->
 <div class="home-feed">
-  {% assign recent_posts = site.posts | where: "published", true | limit: 6 %}
+  {% assign recent_posts = site.posts | where_exp: "p", "p.published != false" | limit: 6 %}
   {% if recent_posts.size > 0 %}
     <div class="feed-heading">recent</div>
     <div class="feed-list">

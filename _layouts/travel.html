@@ -3,36 +3,64 @@ layout: default
 ---
 <!-- Hero -->
 <div class="section-hero" data-gradient="travel">
-  <div class="section-hero-emoji">✈️</div>
-  <h1>Travel</h1>
-  <p>Adventures across the world</p>
+  <div class="section-hero-inner">
+    <div class="section-hero-label">travel</div>
+    <h1>Where I've been</h1>
+    <p>// click a country to mark it &amp; add cities</p>
+  </div>
 </div>
 
 <div class="section-content">
-  {% assign travel_posts = site.posts | where: "published", true | where_exp: "p", "p.categories contains 'travel'" %}
 
-  {% if travel_posts.size == 0 %}
-    <div class="travel-placeholder">
-      <div class="placeholder-icon">📷</div>
-      <h2>Adventures loading...</h2>
-      <p>Photos and stories from around the world are on their way. Check back soon.</p>
+  <!-- World map -->
+  <div class="world-map-section">
+    <div class="world-map-container" id="world-map-container">
+      <div id="world-map-canvas" style="width:100%;min-height:320px;"></div>
+      <div class="map-stats" id="map-stats">
+        <span><strong>0</strong> countries</span>
+        <span><strong>0</strong> cities</span>
+      </div>
+      <!-- City panel -->
+      <div class="city-panel" id="city-panel">
+        <div class="city-panel-title" id="city-panel-title">Country</div>
+        <button class="city-panel-close" id="city-panel-close">&times;</button>
+        <ul class="city-list" id="city-list"></ul>
+        <div class="city-input-row">
+          <input type="text" id="city-input" placeholder="Add city…">
+          <button id="city-add-btn">Add</button>
+        </div>
+      </div>
     </div>
-  {% else %}
-    <div class="post-list">
-      {% for post in travel_posts %}
-        <a href="{{ post.url | relative_url }}" class="post-list-card">
-          <div class="post-list-card-date">{{ post.date | date: "%B %d, %Y" }}</div>
-          <div class="post-list-card-title">{{ post.title }}</div>
-          {% if post.excerpt %}
-            <div class="post-list-card-excerpt">{{ post.excerpt | strip_html }}</div>
-          {% endif %}
-        </a>
-      {% endfor %}
+  </div>
+
+  <!-- Visited summary -->
+  <div class="visited-summary">
+    <div class="section-sub-heading">countries &amp; cities</div>
+    <div class="visited-countries-list" id="visited-countries-list"></div>
+  </div>
+
+  <!-- Travel posts (if any) -->
+  {% assign travel_posts = site.posts | where: "published", true | where_exp: "p", "p.categories contains 'travel'" %}
+  {% if travel_posts.size > 0 %}
+    <div style="margin-top:3rem">
+      <div class="section-sub-heading">stories</div>
+      <div class="post-list">
+        {% for post in travel_posts %}
+          <a href="{{ post.url | relative_url }}" class="post-list-card">
+            <div class="post-list-card-date">{{ post.date | date: "%B %d, %Y" }}</div>
+            <div class="post-list-card-title">{{ post.title }}</div>
+            {% if post.excerpt %}
+              <div class="post-list-card-excerpt">{{ post.excerpt | strip_html }}</div>
+            {% endif %}
+          </a>
+        {% endfor %}
+      </div>
     </div>
   {% endif %}
 
-  <!-- Photo grid placeholder -->
-  <div class="photo-grid" id="photo-grid"></div>
-
   {{ content }}
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script src="{{ '/assets/js/worldmap.js' | relative_url }}" defer></script>

@@ -1,11 +1,12 @@
 ---
 layout: default
 ---
-<!-- Hero -->
 <div class="section-hero" data-gradient="ai">
-  <div class="section-hero-emoji">🤖</div>
-  <h1>AI Zone</h1>
-  <p>Learning in the age of intelligence</p>
+  <div class="section-hero-inner">
+    <div class="section-hero-label">ai zone</div>
+    <h1>Learning in the open</h1>
+    <p>// notes, experiments, and things that surprised me</p>
+  </div>
 </div>
 
 <div class="section-content">
@@ -13,9 +14,8 @@ layout: default
   {% assign til_posts = ai_posts | where: "post_type", "til" %}
   {% assign deep_posts = ai_posts | where_exp: "p", "p.post_type != 'til'" %}
 
-  <!-- TIL cards -->
   {% if til_posts.size > 0 %}
-    <h2 class="section-sub-heading">Today I Learned</h2>
+    <div class="section-sub-heading">today i learned</div>
     <div class="til-grid">
       {% for post in til_posts %}
         <a href="{{ post.url | relative_url }}" class="til-card">
@@ -27,9 +27,8 @@ layout: default
     </div>
   {% endif %}
 
-  <!-- Deep dives -->
   {% if deep_posts.size > 0 %}
-    <h2 class="section-sub-heading">Deep Dives</h2>
+    <div class="section-sub-heading">deep dives</div>
     <div class="post-list">
       {% for post in deep_posts %}
         <a href="{{ post.url | relative_url }}" class="post-list-card">
@@ -44,9 +43,7 @@ layout: default
   {% endif %}
 
   {% if ai_posts.size == 0 %}
-    <div class="empty-state">
-      <p>No posts yet. Start documenting your AI journey!</p>
-    </div>
+    <div class="empty-state">no posts yet — start documenting your ai journey</div>
   {% endif %}
 
   {{ content }}

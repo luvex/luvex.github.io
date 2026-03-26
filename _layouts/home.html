@@ -3,8 +3,10 @@ layout: default
 ---
 <!-- Hero -->
 <section class="home-hero">
-  <h1>{{ site.title }}</h1>
-  <p>{{ site.description }}</p>
+  <div class="home-hero-inner">
+    <h1>{{ site.title }}</h1>
+    <p>{{ site.description }}</p>
+  </div>
 </section>
 
 <!-- Section tiles -->
@@ -12,10 +14,9 @@ layout: default
   {% for item in site.nav_pages %}
     {% assign section = site.sections[item.gradient] %}
     <a href="{{ item.url | relative_url }}" class="section-tile" data-gradient="{{ item.gradient }}">
+      <div class="tile-label">{{ item.title }}</div>
       {% if section %}
-        <div class="tile-emoji">{{ section.emoji }}</div>
-        <div class="tile-title">{{ section.title }}</div>
-        <div class="tile-tagline">{{ section.tagline }}</div>
+        <div class="tile-title">{{ section.tagline }}</div>
       {% else %}
         <div class="tile-title">{{ item.title }}</div>
       {% endif %}
@@ -27,7 +28,7 @@ layout: default
 <div class="home-feed">
   {% assign recent_posts = site.posts | where: "published", true | limit: 6 %}
   {% if recent_posts.size > 0 %}
-    <h2 class="feed-heading">Recently</h2>
+    <div class="feed-heading">recent</div>
     <div class="feed-list">
       {% for post in recent_posts %}
         {% assign cat = post.categories[0] %}
@@ -50,8 +51,6 @@ layout: default
       {% endfor %}
     </div>
   {% else %}
-    <div class="empty-state">
-      <p>No posts yet — check back soon.</p>
-    </div>
+    <div class="empty-state">no posts yet — check back soon</div>
   {% endif %}
 </div>

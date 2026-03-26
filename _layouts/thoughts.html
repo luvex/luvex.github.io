@@ -1,11 +1,12 @@
 ---
 layout: default
 ---
-<!-- Hero -->
 <div class="section-hero" data-gradient="thoughts">
-  <div class="section-hero-emoji">💭</div>
-  <h1>Thoughts</h1>
-  <p>Reflections on life, technology, and the world</p>
+  <div class="section-hero-inner">
+    <div class="section-hero-label">thoughts</div>
+    <h1>Not everything is AI</h1>
+    <p>// personal, unfiltered, occasionally wrong</p>
+  </div>
 </div>
 
 <div class="section-content">
@@ -20,14 +21,12 @@ layout: default
           {% if post.excerpt %}
             <div class="thought-card-excerpt">{{ post.excerpt | strip_html }}</div>
           {% endif %}
-          <span class="read-more">Read more &rarr;</span>
+          <span class="read-more">read more →</span>
         </a>
       {% endfor %}
     </div>
   {% else %}
-    <div class="empty-state">
-      <p>No thoughts posted yet. Writing in progress...</p>
-    </div>
+    <div class="empty-state">nothing here yet — writing in progress</div>
   {% endif %}
 
   {{ content }}

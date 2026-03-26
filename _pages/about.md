@@ -4,53 +4,89 @@ title: About
 permalink: /about
 ---
 
-## Hi, I'm luvex
+## About
 
-I'm a software engineer and data enthusiast living somewhere between code and curiosity. I graduated from the [College of Software](http://cs.nankai.edu.cn) at [Nankai University](http://www.nankai.edu.cn), then pursued data science at [EIT Digital Master School](https://www.masterschool.eitdigital.eu).
+Software engineer and data scientist, currently working as an Investment Engineer at Bridgewater Associates. I build systems at the intersection of data, markets, and software — where precision matters and abstraction is either your best friend or your worst enemy.
 
-I spend most of my time building things, reading papers, and trying to make sense of a world accelerating faster than I can follow.
+I graduated from [Nankai University](http://www.nankai.edu.cn) with a BE in Software Engineering, then went through the [EIT Digital Master School](https://www.masterschool.eitdigital.eu) — split between [Eindhoven University of Technology](https://www.tue.nl) and [Université Côte d'Azur](https://univ-cotedazur.eu).
 
-This blog is my notebook — raw, honest, and perpetually incomplete.
+This blog is my notebook. No algorithm decides what goes here.
 
----
-
-## City Timeline
+## Experience
 
 <ul class="timeline">
   <li>
     <div class="timeline-dot"></div>
     <div class="timeline-content">
-      <strong>Tianjin, China</strong>
-      <span>BSc Computer Science — Nankai University</span>
+      <strong>Investment Engineer — Bridgewater Associates</strong>
+      <span>Current · Shanghai</span>
     </div>
   </li>
   <li>
     <div class="timeline-dot"></div>
     <div class="timeline-content">
-      <strong>Europe</strong>
-      <span>MSc Data Science — EIT Digital Master School</span>
+      <strong>Senior Software Engineer — Wish</strong>
+      <span>E-commerce platform engineering</span>
     </div>
   </li>
   <li>
     <div class="timeline-dot"></div>
     <div class="timeline-content">
-      <strong>Now</strong>
-      <span>Building, writing, exploring</span>
+      <strong>Data Engineer — DiDi</strong>
+      <span>Data pipelines · mobility infrastructure</span>
+    </div>
+  </li>
+  <li>
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <strong>Product Manager — Dalian Futures IT</strong>
+      <span>Financial technology</span>
+    </div>
+  </li>
+  <li>
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <strong>Intern — ING Group</strong>
+      <span>Banking operations · Netherlands</span>
+    </div>
+  </li>
+  <li>
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <strong>Intern — Thomson Reuters</strong>
+      <span>Technology solutions</span>
     </div>
   </li>
 </ul>
 
----
+## Education
 
-## Interests
+<ul class="timeline">
+  <li>
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <strong>Eindhoven University of Technology + Université Côte d'Azur</strong>
+      <span>MSc — EIT Digital Master School</span>
+    </div>
+  </li>
+  <li>
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <strong>Nankai University</strong>
+      <span>BE Software Engineering · College of Software</span>
+    </div>
+  </li>
+</ul>
+
+## Stack
 
 <div class="skill-tags">
+  <span class="skill-tag">Python</span>
+  <span class="skill-tag">C#</span>
+  <span class="skill-tag">Java</span>
+  <span class="skill-tag">SQL</span>
+  <span class="skill-tag">Data Engineering</span>
   <span class="skill-tag">Machine Learning</span>
   <span class="skill-tag">Computer Vision</span>
-  <span class="skill-tag">Data Engineering</span>
-  <span class="skill-tag">C#</span>
-  <span class="skill-tag">Python</span>
-  <span class="skill-tag">Jekyll</span>
-  <span class="skill-tag">Reading</span>
-  <span class="skill-tag">Travel</span>
+  <span class="skill-tag">Financial Systems</span>
 </div>
